@@ -1,0 +1,189 @@
+export default function Home() {
+  return (
+    <div style={{ 
+      minHeight: '100vh', 
+      padding: '2rem',
+      background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)'
+    }}>
+      {/* Header */}
+      <header style={{ 
+        textAlign: 'center', 
+        marginBottom: '3rem',
+        padding: '2rem 0',
+        borderBottom: '2px solid #0284c7'
+      }}>
+        <h1 style={{ 
+          color: '#0284c7', 
+          fontSize: '3.5rem', 
+          marginBottom: '0.5rem',
+          fontWeight: 'bold'
+        }}>
+          Dr. Robert L. Woods MD
+        </h1>
+        <h2 style={{ 
+          color: '#475569', 
+          fontSize: '1.8rem', 
+          fontWeight: 'normal',
+          margin: 0
+        }}>
+          Concierge Psychiatry
+        </h2>
+      </header>
+
+      {/* Hero Section */}
+      <section style={{ 
+        maxWidth: '1200px', 
+        margin: '0 auto',
+        textAlign: 'center',
+        marginBottom: '4rem'
+      }}>
+        <h3 style={{ 
+          fontSize: '2.5rem', 
+          color: '#1e293b',
+          marginBottom: '1.5rem',
+          lineHeight: '1.2'
+        }}>
+          Receive the Highest Quality of Care Right in Your Home
+        </h3>
+        
+        <p style={{ 
+          fontSize: '1.3rem', 
+          color: '#64748b',
+          maxWidth: '800px', 
+          margin: '0 auto 2rem auto', 
+          lineHeight: '1.6'
+        }}>
+          Your mental health is just as important as your physical health. With Dr. Robert Woods MD, 
+          you can receive personalized psychiatric care in the comfort of your own home.
+        </p>
+
+        <div style={{ marginBottom: '3rem' }}>
+          <a href="tel:123-456-7890" style={{ 
+            backgroundColor: '#0284c7', 
+            color: 'white', 
+            padding: '1rem 2rem', 
+            textDecoration: 'none',
+            borderRadius: '0.5rem',
+            fontSize: '1.2rem',
+            marginRight: '1rem',
+            display: 'inline-block',
+            marginBottom: '1rem'
+          }}>
+            Schedule Consultation
+          </a>
+          <a href="mailto:info@robertlwoodsmd.com" style={{ 
+            backgroundColor: '#f1f5f9', 
+            color: '#334155', 
+            padding: '1rem 2rem', 
+            textDecoration: 'none',
+            borderRadius: '0.5rem',
+            fontSize: '1.2rem',
+            border: '2px solid #cbd5e1',
+            display: 'inline-block'
+          }}>
+            Email Dr. Woods
+          </a>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section style={{ 
+        maxWidth: '1200px', 
+        margin: '0 auto',
+        marginBottom: '4rem'
+      }}>
+        <h3 style={{ 
+          fontSize: '2.5rem', 
+          color: '#1e293b',
+          textAlign: 'center',
+          marginBottom: '2rem'
+        }}>
+          Services
+        </h3>
+        
+        <div style={{ 
+          display: 'grid', 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+          gap: '2rem'
+        }}>
+          <div style={{ 
+            backgroundColor: 'white', 
+            padding: '2rem', 
+            borderRadius: '1rem',
+            boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
+          }}>
+            <h4 style={{ color: '#0284c7', fontSize: '1.5rem', marginBottom: '1rem' }}>
+              🏠 In-Home Visits
+            </h4>
+            <p style={{ color: '#64748b', lineHeight: '1.6' }}>
+              Dr. Woods travels to your home, office, school, or anywhere you feel most comfortable.
+            </p>
+          </div>
+          
+          <div style={{ 
+            backgroundColor: 'white', 
+            padding: '2rem', 
+            borderRadius: '1rem',
+            boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
+          }}>
+            <h4 style={{ color: '#0284c7', fontSize: '1.5rem', marginBottom: '1rem' }}>
+              💻 Telepsychiatry
+            </h4>
+            <p style={{ color: '#64748b', lineHeight: '1.6' }}>
+              Virtual consultations available for your convenience and comfort.
+            </p>
+          </div>
+          
+          <div style={{ 
+            backgroundColor: 'white', 
+            padding: '2rem', 
+            borderRadius: '1rem',
+            boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
+          }}>
+            <h4 style={{ color: '#0284c7', fontSize: '1.5rem', marginBottom: '1rem' }}>
+              ⚕️ 25+ Years Experience
+            </h4>
+            <p style={{ color: '#64748b', lineHeight: '1.6' }}>
+              Decades of expertise in psychiatric care and personalized treatment plans.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section style={{ 
+        backgroundColor: 'white',
+        padding: '3rem 2rem',
+        borderRadius: '1rem',
+        maxWidth: '800px',
+        margin: '0 auto',
+        textAlign: 'center',
+        boxShadow: '0 8px 16px rgba(0,0,0,0.1)'
+      }}>
+        <h3 style={{ 
+          fontSize: '2rem', 
+          color: '#1e293b',
+          marginBottom: '1rem'
+        }}>
+          Contact Information
+        </h3>
+        
+        <div style={{ marginBottom: '2rem' }}>
+          <p style={{ fontSize: '1.2rem', color: '#64748b', marginBottom: '0.5rem' }}>
+            📞 <strong>Phone:</strong> <a href="tel:123-456-7890" style={{ color: '#0284c7' }}>(123) 456-7890</a>
+          </p>
+          <p style={{ fontSize: '1.2rem', color: '#64748b', marginBottom: '0.5rem' }}>
+            ✉️ <strong>Email:</strong> <a href="mailto:info@robertlwoodsmd.com" style={{ color: '#0284c7' }}>info@robertlwoodsmd.com</a>
+          </p>
+          <p style={{ fontSize: '1.2rem', color: '#64748b' }}>
+            📍 <strong>Service Area:</strong> Greater Metropolitan Area
+          </p>
+        </div>
+        
+        <p style={{ color: '#64748b', fontStyle: 'italic' }}>
+          "Each patient is unique, and every treatment plan is individualized to meet specific needs."
+        </p>
+      </section>
+    </div>
+  )
+}

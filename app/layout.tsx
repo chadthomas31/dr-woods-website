@@ -1,0 +1,71 @@
+import './globals.css'
+import type { Metadata } from 'next'
+import { Inter, Merriweather } from 'next/font/google'
+
+const inter = Inter({ 
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+
+const merriweather = Merriweather({ 
+  weight: ['300', '400', '700'],
+  subsets: ['latin'],
+  variable: '--font-merriweather',
+  display: 'swap',
+})
+
+export const metadata: Metadata = {
+  title: 'Dr. Robert L. Woods MD - Premier Concierge Psychiatry',
+  description: 'Experience exceptional psychiatric care in your own space. Dr. Woods brings 25+ years of expertise directly to your home, office, or preferred location with personalized, confidential treatment.',
+  keywords: [
+    'concierge psychiatry', 
+    'private psychiatrist', 
+    'home visit psychiatrist', 
+    'telepsychiatry', 
+    'personalized mental health care',
+    'Dr. Robert Woods',
+    'premium psychiatric services',
+    'executive mental health'
+  ],
+  authors: [{ name: 'Dr. Robert L. Woods MD' }],
+  creator: 'Dr. Robert L. Woods MD',
+  publisher: 'Dr. Robert L. Woods MD',
+  robots: 'index, follow',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://robertlwoodsmd.com',
+    title: 'Dr. Robert L. Woods MD - Premier Concierge Psychiatry',
+    description: 'Experience exceptional psychiatric care in your own space. Personalized mental health treatment with 25+ years of expertise.',
+    siteName: 'Dr. Robert L. Woods MD',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Dr. Robert L. Woods MD - Premier Concierge Psychiatry',
+    description: 'Experience exceptional psychiatric care in your own space.',
+  },
+}
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en" className={`${inter.variable} ${merriweather.variable} scroll-smooth`}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+      </head>
+      <body className="font-sans antialiased bg-gray-900 text-gray-100">
+        {children}
+      </body>
+    </html>
+  )
+}
