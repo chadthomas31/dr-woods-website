@@ -1,6 +1,9 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter, Merriweather } from 'next/font/google'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import AIChatWidget from './components/AIChatWidget'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -16,7 +19,7 @@ const merriweather = Merriweather({
 })
 
 export const metadata: Metadata = {
-  title: 'Dr. Robert L. Woods MD - Premier Concierge Psychiatry',
+  title: 'Robert L Woods MD - Concierge Psychiatry | Enriching Lives',
   description: 'Experience exceptional psychiatric care in your own space. Dr. Woods brings 25+ years of expertise directly to your home, office, or preferred location with personalized, confidential treatment.',
   keywords: [
     'concierge psychiatry', 
@@ -36,13 +39,13 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://robertlwoodsmd.com',
-    title: 'Dr. Robert L. Woods MD - Premier Concierge Psychiatry',
+    title: 'Robert L Woods MD - Concierge Psychiatry | Enriching Lives',
     description: 'Experience exceptional psychiatric care in your own space. Personalized mental health treatment with 25+ years of expertise.',
     siteName: 'Dr. Robert L. Woods MD',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Dr. Robert L. Woods MD - Premier Concierge Psychiatry',
+    title: 'Robert L Woods MD - Concierge Psychiatry | Enriching Lives',
     description: 'Experience exceptional psychiatric care in your own space.',
   },
 }
@@ -63,8 +66,11 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
       </head>
-      <body className="font-sans antialiased bg-gray-900 text-gray-100">
+      <body className="font-sans antialiased bg-black text-white">
+        <Header />
         {children}
+        <Footer />
+        <AIChatWidget />
       </body>
     </html>
   )

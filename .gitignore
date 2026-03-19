@@ -11,3 +11,19 @@ out/
 node_modules/
 package-lock.json
 yarn.lock
+
+# Cursor workspace
+.cursor/
+
+# Temporary files
+temp-mcp/
+utils/
+*debug*.js
+*example*.js
+
+# Environment variables
+.env.local
+.env.development
+.env.production
+.env.staging
+*.log
