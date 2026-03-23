@@ -1,24 +1,33 @@
-import Link from 'next/link'
+import Image from 'next/image'
+import { practiceData } from '../lib/practice-data'
 
 export default function BookCTA() {
-  return (
-    <section className="py-20 bg-gradient-to-b from-black via-stone-950/50 to-black relative overflow-hidden">
-      {/* Warm background overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-amber-950/20 via-transparent to-amber-950/20" />
+  const { doctor } = practiceData
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white uppercase tracking-wide mb-4">
-          Ready To Book An Appointment?
+  return (
+    <section className="relative min-h-[400px] md:min-h-[500px] flex items-center justify-center overflow-hidden">
+      <Image
+        src="/images/cta-woman.jpeg"
+        alt="Thoughtful woman - take the first step toward better mental health"
+        fill
+        className="object-cover"
+        sizes="100vw"
+        priority={false}
+      />
+      <div className="absolute inset-0 bg-charcoal-dark/60" />
+      <div className="relative z-10 max-w-3xl mx-auto px-4 text-center py-16 md:py-24">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white font-serif mb-6 uppercase tracking-wide">
+          Ready to Book an Appointment?
         </h2>
-        <p className="text-gray-300 mb-8">
+        <p className="text-white/90 text-lg md:text-xl mb-10">
           Give us a call today and put your mind at ease.
         </p>
-        <Link
-          href="/contact"
-          className="inline-block bg-gold-400 hover:bg-gold-500 text-black px-10 py-4 font-semibold text-sm uppercase tracking-widest transition-all hover:shadow-lg hover:shadow-gold-400/20"
+        <a
+          href={doctor.phoneHref}
+          className="inline-block bg-amber-700/90 hover:bg-amber-600 text-white font-semibold py-4 px-12 rounded-sm transition-colors uppercase tracking-wide text-lg"
         >
           Call Now
-        </Link>
+        </a>
       </div>
     </section>
   )

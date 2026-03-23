@@ -6,17 +6,28 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        gold: {
-          300: '#E8D48B',
-          400: '#D4AF37',
-          500: '#C5A55A',
-          600: '#B8962E',
-          700: '#9A7B1F',
+        olive: {
+          50:  '#f6f7f0',
+          100: '#e8ebd8',
+          200: '#d1d7b2',
+          300: '#b3bc82',
+          400: '#96a15c',
+          500: '#6B8040',
+          600: '#5a6c35',
+          700: '#4a5a2c',
+          800: '#3d4a25',
+          900: '#333e20',
+        },
+        charcoal: {
+          DEFAULT: '#32373c',
+          dark: '#1a1a1a',
+          light: '#4a4a4a',
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        serif: ['Merriweather', 'Georgia', 'serif'],
+        sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-merriweather)', 'Merriweather', 'Georgia', 'serif'],
+        cursive: ['var(--font-cursive)', 'Dancing Script', 'cursive'],
       },
     },
   },

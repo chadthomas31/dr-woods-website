@@ -1,6 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter, Merriweather } from 'next/font/google'
+import { Inter, Merriweather, Dancing_Script } from 'next/font/google'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import AIChatWidget from './components/AIChatWidget'
@@ -11,10 +11,17 @@ const inter = Inter({
   display: 'swap',
 })
 
-const merriweather = Merriweather({ 
+const merriweather = Merriweather({
   weight: ['300', '400', '700'],
   subsets: ['latin'],
   variable: '--font-merriweather',
+  display: 'swap',
+})
+
+const dancingScript = Dancing_Script({
+  weight: ['400', '700'],
+  subsets: ['latin'],
+  variable: '--font-cursive',
   display: 'swap',
 })
 
@@ -61,12 +68,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${merriweather.variable} scroll-smooth`}>
+    <html lang="en" className={`${inter.variable} ${merriweather.variable} ${dancingScript.variable} scroll-smooth`}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
       </head>
-      <body className="font-sans antialiased bg-black text-white">
+      <body className="font-sans antialiased bg-olive-50 text-gray-900">
         <Header />
         {children}
         <Footer />

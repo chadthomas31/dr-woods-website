@@ -1,33 +1,28 @@
-import Link from 'next/link'
+import { practiceData } from '../lib/practice-data'
 
 export default function HomeContact() {
-  return (
-    <section className="py-20 bg-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-0 overflow-hidden">
-          {/* Left: Contact CTA */}
-          <div className="bg-white p-10 md:p-14">
-            <h2 className="text-2xl md:text-3xl font-serif font-bold text-black uppercase tracking-wide mb-6">
-              Start Feeling At Ease. Contact Me Today.
-            </h2>
-            <div className="space-y-4 mb-8">
-              <Link
-                href="/contact"
-                className="block bg-gold-400 hover:bg-gold-500 text-black text-center py-3 px-6 font-semibold text-sm uppercase tracking-widest transition-colors"
-              >
-                Schedule a Consultation
-              </Link>
-              <Link
-                href="/services"
-                className="block border border-gold-400 hover:bg-gold-400/10 text-gold-700 text-center py-3 px-6 font-semibold text-sm uppercase tracking-widest transition-colors"
-              >
-                View Services
-              </Link>
-            </div>
-          </div>
+  const { testimonials } = practiceData
 
-          {/* Right: Warm gradient placeholder for therapy photo */}
-          <div className="bg-gradient-to-br from-stone-400 via-amber-200/60 to-stone-500 min-h-[300px] md:min-h-0" />
+  return (
+    <section className="py-16 md:py-20 bg-olive-100/40">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl md:text-4xl font-bold text-charcoal-dark text-center mb-12">
+          What Our Patients Say
+        </h2>
+
+        <div className="space-y-10">
+          {testimonials.map((t, i) => (
+            <blockquote key={i} className="text-center">
+              <p className="text-gray-600 text-lg italic leading-relaxed mb-4">
+                &ldquo;{t.text}&rdquo;
+              </p>
+              <footer className="text-sm">
+                <span className="font-semibold text-charcoal-dark">{t.author}</span>
+                <span className="text-gray-400 mx-2">&mdash;</span>
+                <span className="text-gray-500">{t.role}</span>
+              </footer>
+            </blockquote>
+          ))}
         </div>
       </div>
     </section>
