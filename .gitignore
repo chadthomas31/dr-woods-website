@@ -12,6 +12,7 @@ out/
 .cursor/
 
 # Temporary files
+.tmp/
 temp-mcp/
 utils/
 *debug*.js

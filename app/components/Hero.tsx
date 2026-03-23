@@ -38,7 +38,7 @@ export default function Hero() {
           </h1>
           <Link
             href="/contact"
-            className="inline-block mt-8 bg-amber-700/90 hover:bg-amber-600 text-white font-semibold py-4 px-10 rounded-sm transition-colors uppercase tracking-wide"
+            className="inline-flex items-center justify-center min-h-[48px] mt-8 bg-amber-700/90 hover:bg-amber-600 text-white font-semibold py-4 px-10 rounded-sm transition-colors uppercase tracking-wide"
           >
             Make an Appointment
           </Link>

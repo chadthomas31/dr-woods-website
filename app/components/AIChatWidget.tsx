@@ -53,8 +53,9 @@ export default function AIChatWidget() {
     <>
       {!open && (
         <button
+          type="button"
           onClick={() => setOpen(true)}
-          className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-olive-500 hover:bg-olive-600 text-white rounded-full shadow-lg flex items-center justify-center transition-all hover:scale-110"
+          className="fixed bottom-6 right-6 z-50 min-h-[56px] min-w-[56px] h-14 w-14 bg-olive-500 hover:bg-olive-600 text-white rounded-full shadow-lg flex items-center justify-center transition-all hover:scale-110"
           aria-label="Open chat assistant"
         >
           <MessageSquare size={24} />
@@ -74,7 +75,12 @@ export default function AIChatWidget() {
                 <p className="text-olive-100 text-xs">AI-powered practice assistant</p>
               </div>
             </div>
-            <button onClick={() => setOpen(false)} className="text-white/80 hover:text-white" aria-label="Close chat">
+            <button
+              type="button"
+              onClick={() => setOpen(false)}
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-white/80 hover:text-white hover:bg-white/10"
+              aria-label="Close chat"
+            >
               <X size={22} />
             </button>
           </div>
@@ -91,9 +97,10 @@ export default function AIChatWidget() {
                 <div className="flex flex-wrap gap-2">
                   {['What services do you offer?', 'How do I schedule?', 'Do you accept insurance?'].map((q) => (
                     <button
+                      type="button"
                       key={q}
                       onClick={() => setInput(q)}
-                      className="text-xs bg-white hover:bg-olive-50 text-olive-600 px-3 py-1.5 rounded-full transition-colors border border-olive-200"
+                      className="min-h-[44px] text-left text-xs sm:text-sm bg-white hover:bg-olive-50 text-olive-600 px-4 py-2.5 rounded-full transition-colors border border-olive-200"
                     >
                       {q}
                     </button>
@@ -139,7 +146,11 @@ export default function AIChatWidget() {
           {/* Input */}
           <div className="px-4 py-3 bg-white border-t border-gray-200">
             <div className="flex items-center space-x-2">
-              <a href="tel:+17143368042" className="text-gray-400 hover:text-olive-500 transition-colors" aria-label="Call office">
+              <a
+                href="tel:+17143368042"
+                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-gray-400 hover:text-olive-500 hover:bg-gray-100 transition-colors"
+                aria-label="Call office"
+              >
                 <Phone size={20} />
               </a>
               <input
@@ -149,13 +160,14 @@ export default function AIChatWidget() {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
                 placeholder="Ask a question..."
-                className="flex-1 bg-gray-100 text-gray-900 text-sm rounded-full px-4 py-2.5 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-olive-500"
+                className="flex-1 min-h-[44px] bg-gray-100 text-gray-900 text-base sm:text-sm rounded-full px-4 py-3 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-olive-500"
                 maxLength={500}
               />
               <button
+                type="button"
                 onClick={sendMessage}
                 disabled={!input.trim() || loading}
-                className="w-10 h-10 bg-olive-500 hover:bg-olive-600 disabled:bg-gray-300 text-white rounded-full flex items-center justify-center transition-colors"
+                className="h-11 w-11 shrink-0 bg-olive-500 hover:bg-olive-600 disabled:bg-gray-300 text-white rounded-full flex items-center justify-center transition-colors"
                 aria-label="Send message"
               >
                 <Send size={18} />

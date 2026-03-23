@@ -43,7 +43,7 @@ export default function ContactPage() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-gray-700 text-sm font-medium mb-1.5">Name *</label>
                       <input
@@ -51,7 +51,7 @@ export default function ContactPage() {
                         required
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full border border-gray-300 rounded-md px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent"
+                        className="w-full min-h-[44px] border border-gray-300 rounded-md px-4 py-3 text-gray-900 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent"
                       />
                     </div>
                     <div>
@@ -61,7 +61,7 @@ export default function ContactPage() {
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full border border-gray-300 rounded-md px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent"
+                        className="w-full min-h-[44px] border border-gray-300 rounded-md px-4 py-3 text-gray-900 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent"
                       />
                     </div>
                   </div>
@@ -71,7 +71,7 @@ export default function ContactPage() {
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full border border-gray-300 rounded-md px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent"
+                      className="w-full min-h-[44px] border border-gray-300 rounded-md px-4 py-3 text-gray-900 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent"
                     />
                   </div>
                   <div>
@@ -80,7 +80,7 @@ export default function ContactPage() {
                       rows={5}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full border border-gray-300 rounded-md px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent resize-none"
+                      className="w-full min-h-[120px] border border-gray-300 rounded-md px-4 py-3 text-gray-900 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent resize-y"
                     />
                   </div>
                   <button type="submit" className="btn-primary w-full text-sm">
@@ -101,7 +101,10 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Phone</p>
-                    <a href={doctor.phoneHref} className="text-charcoal-dark hover:text-olive-500 transition-colors font-medium">
+                    <a
+                      href={doctor.phoneHref}
+                      className="touch-target-link text-charcoal-dark hover:text-olive-500 transition-colors font-medium"
+                    >
                       {doctor.phone}
                     </a>
                   </div>
@@ -113,7 +116,10 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Email</p>
-                    <a href={`mailto:${doctor.email}`} className="text-charcoal-dark hover:text-olive-500 transition-colors font-medium">
+                    <a
+                      href={`mailto:${doctor.email}`}
+                      className="touch-target-link text-charcoal-dark hover:text-olive-500 transition-colors font-medium break-all"
+                    >
                       {doctor.email}
                     </a>
                   </div>

@@ -65,7 +65,10 @@ export default function Services() {
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-charcoal-dark mb-3">{card.name}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed mb-4">{card.description}</p>
-                  <Link href="/services" className="text-olive-500 hover:text-olive-600 font-semibold text-sm transition-colors">
+                  <Link
+                    href="/services"
+                    className="touch-target-link text-olive-500 hover:text-olive-600 font-semibold text-sm transition-colors -ml-2 pl-2"
+                  >
                     Learn More &rarr;
                   </Link>
                 </div>

@@ -16,7 +16,10 @@ export default function About() {
             <p key={i}>{p}</p>
           ))}
         </div>
-        <Link href="/about" className="text-olive-500 hover:text-olive-600 font-semibold text-xl md:text-2xl transition-colors inline-block">
+        <Link
+          href="/about"
+          className="touch-target-link text-olive-500 hover:text-olive-600 font-semibold text-xl md:text-2xl transition-colors px-3"
+        >
           Learn More About Dr. Woods &rarr;
         </Link>
       </div>

@@ -21,17 +21,40 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-fadeIn {
+    animation: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 @layer components {
+  /* Footer / nav lists: ~44px min tap height */
+  .touch-target-link {
+    @apply inline-flex min-h-[44px] items-center py-2;
+  }
+
   .btn-primary {
-    @apply bg-charcoal hover:bg-charcoal-dark text-white font-semibold py-3 px-8 rounded-md transition-all duration-200;
+    @apply bg-charcoal hover:bg-charcoal-dark text-white font-semibold py-3 px-8 rounded-md transition-all duration-200 min-h-[44px] inline-flex items-center justify-center;
   }
 
   .btn-outline {
-    @apply border-2 border-charcoal text-charcoal hover:bg-charcoal hover:text-white font-semibold py-3 px-8 rounded-md transition-all duration-200;
+    @apply border-2 border-charcoal text-charcoal hover:bg-charcoal hover:text-white font-semibold py-3 px-8 rounded-md transition-all duration-200 min-h-[44px] inline-flex items-center justify-center;
   }
 
   .btn-olive {
-    @apply bg-olive-500 hover:bg-olive-600 text-white font-semibold py-3 px-8 rounded-md transition-all duration-200;
+    @apply bg-olive-500 hover:bg-olive-600 text-white font-semibold py-3 px-8 rounded-md transition-all duration-200 min-h-[44px] inline-flex items-center justify-center;
   }
 
   .section-padding {

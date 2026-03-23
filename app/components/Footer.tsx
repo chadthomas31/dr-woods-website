@@ -41,7 +41,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-olive-400 transition-colors text-sm"
+                    className="touch-target-link text-gray-300 hover:text-olive-400 transition-colors text-sm"
                   >
                     {link.label}
                   </Link>
@@ -56,7 +56,7 @@ export default function Footer() {
                 <li key={c.name}>
                   <Link
                     href="/services"
-                    className="text-gray-400 hover:text-olive-400 transition-colors text-sm"
+                    className="touch-target-link text-gray-400 hover:text-olive-400 transition-colors text-sm"
                   >
                     {c.name}
                   </Link>
@@ -72,20 +72,23 @@ export default function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="text-olive-400 hover:text-olive-300 font-semibold text-sm transition-colors"
+                  className="touch-target-link text-olive-400 hover:text-olive-300 font-semibold text-sm transition-colors"
                 >
                   Schedule an appointment
                 </Link>
               </li>
               <li className="flex items-center space-x-2 text-gray-300">
                 <Phone size={14} className="text-olive-400 shrink-0" />
-                <a href={doctor.phoneHref} className="hover:text-olive-400 transition-colors text-sm">
+                <a href={doctor.phoneHref} className="touch-target-link hover:text-olive-400 transition-colors text-sm">
                   {doctor.phone}
                 </a>
               </li>
               <li className="flex items-center space-x-2 text-gray-300">
                 <Mail size={14} className="text-olive-400 shrink-0" />
-                <a href={`mailto:${doctor.email}`} className="hover:text-olive-400 transition-colors text-sm break-all">
+                <a
+                  href={`mailto:${doctor.email}`}
+                  className="touch-target-link hover:text-olive-400 transition-colors text-sm break-all max-w-full"
+                >
                   {doctor.email}
                 </a>
               </li>
@@ -107,7 +110,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-olive-400 transition-colors text-sm"
+                    className="touch-target-link text-gray-300 hover:text-olive-400 transition-colors text-sm"
                   >
                     {link.label}
                   </Link>
@@ -124,13 +127,13 @@ export default function Footer() {
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-2">
             <Link
               href="/policies#website-privacy"
-              className="text-gray-500 hover:text-olive-400 text-xs transition-colors"
+              className="touch-target-link text-gray-500 hover:text-olive-400 text-xs transition-colors px-2"
             >
               Privacy policy
             </Link>
             <Link
               href="/policies#hipaa-notice"
-              className="text-gray-500 hover:text-olive-400 text-xs transition-colors"
+              className="touch-target-link text-gray-500 hover:text-olive-400 text-xs transition-colors px-2"
             >
               HIPAA notice
             </Link>

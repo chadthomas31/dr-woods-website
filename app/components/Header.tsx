@@ -102,24 +102,36 @@ export default function Header() {
       {/* Top bar */}
       <div className="bg-olive-500 text-white text-lg sm:text-xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
-          <a href={doctor.phoneHref} className="flex items-center space-x-2 hover:text-olive-300 transition-colors whitespace-nowrap">
+          <a
+            href={doctor.phoneHref}
+            className="flex items-center min-h-[44px] space-x-2 hover:text-olive-300 transition-colors whitespace-nowrap -mx-2 px-2 rounded-md hover:bg-white/10"
+          >
             <Phone size={20} />
             <span>{doctor.phone}</span>
           </a>
           <div className="hidden sm:flex items-center space-x-3 sm:space-x-4 text-base sm:text-lg flex-wrap justify-end gap-y-1">
-            <Link href="/contact" className="hover:text-olive-300 transition-colors whitespace-nowrap">
+            <Link
+              href="/contact"
+              className="inline-flex items-center min-h-[44px] px-1 hover:text-olive-300 transition-colors whitespace-nowrap rounded-md hover:bg-white/10"
+            >
               Schedule an Appointment
             </Link>
             <span className="text-gray-400 hidden md:inline" aria-hidden>
               |
             </span>
-            <Link href="/policies" className="hover:text-olive-300 transition-colors whitespace-nowrap">
+            <Link
+              href="/policies"
+              className="inline-flex items-center min-h-[44px] px-1 hover:text-olive-300 transition-colors whitespace-nowrap rounded-md hover:bg-white/10"
+            >
               Policies
             </Link>
             <span className="text-gray-400 hidden md:inline" aria-hidden>
               |
             </span>
-            <Link href="/services" className="hover:text-olive-300 transition-colors whitespace-nowrap">
+            <Link
+              href="/services"
+              className="inline-flex items-center min-h-[44px] px-1 hover:text-olive-300 transition-colors whitespace-nowrap rounded-md hover:bg-white/10"
+            >
               Our Services
             </Link>
           </div>
@@ -182,7 +194,7 @@ export default function Header() {
                     <Link
                       href={item.href}
                       onClick={() => { if (!hasChildren) setMobileOpen(false) }}
-                      className={`block py-2 text-xl font-medium flex-1 ${
+                      className={`flex min-h-[44px] items-center py-2 text-xl font-medium flex-1 ${
                         pathname === item.href ? 'text-olive-500' : 'text-gray-600'
                       }`}
                     >
@@ -190,8 +202,11 @@ export default function Header() {
                     </Link>
                     {hasChildren && (
                       <button
+                        type="button"
                         onClick={() => setMobileDropdown(mobileDropdown === item.label ? null : item.label)}
-                        className="p-2 text-gray-400 hover:text-olive-500"
+                        className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-gray-400 hover:text-olive-500 hover:bg-olive-100/80"
+                        aria-expanded={mobileDropdown === item.label}
+                        aria-label={`${mobileDropdown === item.label ? 'Collapse' : 'Expand'} ${item.label} submenu`}
                       >
                         <ChevronDown
                           size={16}
@@ -207,7 +222,7 @@ export default function Header() {
                           key={child.label}
                           href={child.href}
                           onClick={() => setMobileOpen(false)}
-                          className="block py-1.5 text-base text-gray-500 hover:text-olive-500"
+                          className="flex min-h-[44px] items-center py-2 text-base text-gray-500 hover:text-olive-500"
                         >
                           {child.label}
                         </Link>
@@ -217,7 +232,11 @@ export default function Header() {
                 </div>
               )
             })}
-            <Link href="/contact" onClick={() => setMobileOpen(false)} className="block btn-primary text-lg text-center mt-2">
+            <Link
+              href="/contact"
+              onClick={() => setMobileOpen(false)}
+              className="btn-primary w-full text-lg text-center mt-2"
+            >
               Contact Me
             </Link>
           </nav>

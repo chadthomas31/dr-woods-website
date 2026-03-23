@@ -24,7 +24,7 @@ export default function BookCTA() {
         </p>
         <a
           href={doctor.phoneHref}
-          className="inline-block bg-amber-700/90 hover:bg-amber-600 text-white font-semibold py-4 px-12 rounded-sm transition-colors uppercase tracking-wide text-lg"
+          className="inline-flex items-center justify-center min-h-[48px] bg-amber-700/90 hover:bg-amber-600 text-white font-semibold py-4 px-12 rounded-sm transition-colors uppercase tracking-wide text-lg"
         >
           Call Now
         </a>
