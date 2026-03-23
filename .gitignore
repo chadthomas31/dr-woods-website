@@ -1,16 +1,6 @@
-node_modules
-.next/
-package-lock.json
-yarn.lock
-
-# Next.js build output
+node_modules/
 .next/
 out/
-
-# Dependencies
-node_modules/
-package-lock.json
-yarn.lock
 
 # Cursor workspace
 .cursor/
@@ -27,3 +17,4 @@ utils/
 .env.production
 .env.staging
 *.log
+.vercel
