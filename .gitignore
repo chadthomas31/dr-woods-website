@@ -1,3 +1,9 @@
+# Package manager: npm. Commit package-lock.json — it is the canonical resolved
+# dependency tree for CI, Vercel, and the team (not a personal/env artifact).
+# Ignore other lockfiles so accidental yarn/pnpm runs do not add a second source of truth.
+yarn.lock
+pnpm-lock.yaml
+
 node_modules/
 .next/
 out/
