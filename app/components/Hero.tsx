@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { practiceData } from '../lib/practice-data'
+import heroBanner from '../../public/images/hero-banner.webp'
 
 export default function Hero() {
   const { hero, doctor } = practiceData
@@ -9,7 +10,7 @@ export default function Hero() {
     <section className="pt-28 relative min-h-[60vh] flex items-center overflow-hidden">
       {/* Full-bleed banner image - matching current site */}
       <Image
-        src="/images/hero-banner.webp"
+        src={heroBanner}
         alt="Psychiatric care and patient wellness"
         fill
         className="object-cover"
