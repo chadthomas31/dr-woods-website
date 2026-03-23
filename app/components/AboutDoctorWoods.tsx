@@ -51,8 +51,8 @@ export default function AboutDoctorWoods() {
                 <p className="text-gray-600 leading-relaxed text-lg">{journey.content}</p>
               )
             )}
-            <div className="mt-10 pt-2 border-t border-olive-100 max-w-lg">
-              <DoctorSignature className="h-14 sm:h-16 md:h-[4.5rem]" />
+            <div className="mt-10 pt-2 border-t border-olive-100 max-w-xl">
+              <DoctorSignature className="h-16 sm:h-[4.5rem] md:h-20" />
             </div>
           </div>
         </article>

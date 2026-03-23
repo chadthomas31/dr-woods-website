@@ -133,10 +133,10 @@ export default function Header() {
           {/* Logo: min-w-0 + max-w so wide intrinsic image cannot blow out flex row */}
           <Link
             href="/"
-            className="block min-w-0 max-w-[240px] sm:max-w-[280px] md:max-w-[300px] lg:max-w-[340px] shrink"
+            className="block min-w-0 max-w-[260px] sm:max-w-[300px] md:max-w-[330px] lg:max-w-[380px] shrink"
           >
             <span className="sr-only">{doctor.name}</span>
-            <DoctorSignature className="md:h-[4rem] lg:h-[4.25rem]" />
+            <DoctorSignature className="md:h-[4.5rem] lg:h-[4.75rem]" />
             <p className="text-olive-500 text-sm font-medium truncate mt-1">{doctor.subtitle}</p>
           </Link>
 

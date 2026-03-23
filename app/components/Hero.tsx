@@ -29,7 +29,7 @@ export default function Hero() {
             </span>
             <DoctorSignature
               onDarkBackground
-              className="h-14 sm:h-16 md:h-20 md:max-w-[min(92vw,680px)]"
+              className="h-16 sm:h-[4.5rem] md:h-[5.5rem] md:max-w-[min(92vw,760px)]"
             />
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-serif leading-tight">
