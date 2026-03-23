@@ -91,6 +91,12 @@ export const practiceData = {
       description: "Secure virtual consultations via FaceTime, Zoom, and other platforms.",
       gradient: "from-zinc-800/60 to-amber-900/60",
     },
+    {
+      name: "Concierge & in-home care",
+      description:
+        "Personalized visits where you are most comfortable—home, school, workplace, or another setting you choose—alongside telepsychiatry when appropriate.",
+      gradient: "from-stone-700/60 to-amber-900/60",
+    },
   ],
   services: [
     {

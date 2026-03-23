@@ -1,17 +1,17 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { practiceData } from '../lib/practice-data'
-import heroBanner from '../../public/images/hero-banner.webp'
+import heroEnrichingLives from '../../public/images/hero-enriching-lives.jpg'
 
 export default function Hero() {
   const { hero, doctor } = practiceData
 
   return (
     <section className="pt-28 relative min-h-[60vh] flex items-center overflow-hidden">
-      {/* Full-bleed banner image - matching current site */}
+      {/* Same full-bleed hero as legacy robertlwoodsmd.com (Empowering Minds / Enriching Lives) */}
       <Image
-        src={heroBanner}
-        alt="Psychiatric care and patient wellness"
+        src={heroEnrichingLives}
+        alt="Calming scene representing compassionate psychiatric care and wellness"
         fill
         className="object-cover"
         priority

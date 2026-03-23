@@ -2,7 +2,13 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { practiceData } from '../lib/practice-data'
 
-const SERVICE_IMAGES = ['/images/service-1.webp', '/images/service-2.webp', '/images/service-3.webp'] as const
+/** Matches serviceCards order; last image was the old hero (legacy lower gallery set). */
+const SERVICE_IMAGES = [
+  '/images/service-1.webp',
+  '/images/service-2.webp',
+  '/images/service-3.webp',
+  '/images/hero-banner.webp',
+] as const
 
 export default function Services() {
   const { conditions, serviceCards } = practiceData
@@ -40,7 +46,7 @@ export default function Services() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {serviceCards.map((card, i) => (
               <div key={i} className="bg-olive-50/80 rounded-xl shadow-md hover:shadow-lg transition-shadow overflow-hidden group border border-olive-100">
                 <div className="relative h-48">
