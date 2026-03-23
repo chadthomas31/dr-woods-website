@@ -26,8 +26,8 @@ export default function Footer() {
           {/* Practice */}
           <div>
             <h3 className="sr-only">{doctor.name}</h3>
-            <div className="mb-4">
-              <DoctorSignature onDarkBackground />
+            <div className="mb-4 max-w-[320px]">
+              <DoctorSignature onDarkBackground className="md:h-[4rem]" />
             </div>
             <p className="text-olive-400 text-sm font-medium mb-4">{doctor.subtitle}</p>
             <p className="text-gray-400 text-sm leading-relaxed">{doctor.tagline}</p>

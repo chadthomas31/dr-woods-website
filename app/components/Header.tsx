@@ -129,16 +129,19 @@ export default function Header() {
       {/* Main nav - light olive tint */}
       <div className="w-full bg-olive-50 border-b border-olive-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
-          {/* Logo - centered under phone #, 0.5in from left, 1in from menu */}
-          <Link href="/" className="block pl-[0.5in] mr-[1in] shrink-0">
+        <div className="flex justify-between items-center gap-4 py-4">
+          {/* Logo: min-w-0 + max-w so wide intrinsic image cannot blow out flex row */}
+          <Link
+            href="/"
+            className="block min-w-0 max-w-[240px] sm:max-w-[280px] md:max-w-[300px] lg:max-w-[340px] shrink"
+          >
             <span className="sr-only">{doctor.name}</span>
-            <DoctorSignature className="md:h-[4.25rem]" />
-            <p className="text-olive-500 text-sm font-medium whitespace-nowrap mt-1">{doctor.subtitle}</p>
+            <DoctorSignature className="md:h-[4rem] lg:h-[4.25rem]" />
+            <p className="text-olive-500 text-sm font-medium truncate mt-1">{doctor.subtitle}</p>
           </Link>
 
           {/* Desktop Nav - single line, no wrap */}
-          <nav className="hidden lg:flex items-center flex-nowrap space-x-8 shrink-0">
+          <nav className="hidden lg:flex items-center flex-nowrap space-x-8 shrink-0 min-w-0">
             {nav.map((item) => (
               <span key={item.href} className="whitespace-nowrap shrink-0">
                 <DropdownMenu
