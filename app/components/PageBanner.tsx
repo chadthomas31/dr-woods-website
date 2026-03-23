@@ -26,7 +26,7 @@ export default function PageBanner({ title, subtitle, imageSrc = '/images/servic
         <div className="max-w-7xl mx-auto w-full">
           <div className="mb-2">
             <span className="sr-only">{doctor.name}</span>
-            <DoctorSignature onDarkBackground className="h-7 sm:h-8 max-w-[260px]" />
+            <DoctorSignature onDarkBackground className="sm:h-[4.25rem] md:h-[4.75rem]" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white tracking-tight uppercase">
             {title}

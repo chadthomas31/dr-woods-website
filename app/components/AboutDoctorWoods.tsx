@@ -52,7 +52,7 @@ export default function AboutDoctorWoods() {
               )
             )}
             <div className="mt-10 pt-2 border-t border-olive-100">
-              <DoctorSignature className="h-11 sm:h-12 max-w-[min(100%,340px)]" />
+              <DoctorSignature className="h-16 sm:h-[4.5rem] md:h-20 md:max-w-[min(100%,640px)]" />
             </div>
           </div>
         </article>

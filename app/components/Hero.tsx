@@ -27,7 +27,7 @@ export default function Hero() {
             <span className="sr-only">
               {doctor.name} — {doctor.subtitle}
             </span>
-            <DoctorSignature onDarkBackground className="h-8 sm:h-9 max-w-[280px]" />
+            <DoctorSignature onDarkBackground className="md:h-[5rem] md:max-w-[min(100%,640px)]" />
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-serif leading-tight">
             <span className="block">{hero.line1}</span>

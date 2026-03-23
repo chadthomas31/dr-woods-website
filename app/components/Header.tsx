@@ -133,7 +133,7 @@ export default function Header() {
           {/* Logo - centered under phone #, 0.5in from left, 1in from menu */}
           <Link href="/" className="block pl-[0.5in] mr-[1in] shrink-0">
             <span className="sr-only">{doctor.name}</span>
-            <DoctorSignature className="h-9 max-h-[2.75rem] sm:h-11 sm:max-h-[3rem]" />
+            <DoctorSignature className="md:h-[4.25rem]" />
             <p className="text-olive-500 text-sm font-medium whitespace-nowrap mt-1">{doctor.subtitle}</p>
           </Link>
 
