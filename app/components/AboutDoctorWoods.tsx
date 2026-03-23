@@ -37,7 +37,19 @@ export default function AboutDoctorWoods() {
           </div>
           <div className="order-1 md:order-2">
             <h3 className="text-2xl md:text-3xl font-bold text-charcoal-dark mb-4">{journey.title}</h3>
-            <p className="text-gray-600 leading-relaxed text-lg">{journey.content}</p>
+            {'paragraphs' in journey && Array.isArray(journey.paragraphs) ? (
+              <div className="space-y-4">
+                {journey.paragraphs.map((p, i) => (
+                  <p key={i} className="text-gray-600 leading-relaxed text-lg">
+                    {p}
+                  </p>
+                ))}
+              </div>
+            ) : (
+              'content' in journey && (
+                <p className="text-gray-600 leading-relaxed text-lg">{journey.content}</p>
+              )
+            )}
           </div>
         </article>
 
@@ -86,7 +98,19 @@ export default function AboutDoctorWoods() {
           </div>
           <div className="order-1 md:order-2">
             <h3 className="text-2xl md:text-3xl font-bold text-charcoal-dark mb-4">{computer.title}</h3>
-            <p className="text-gray-600 leading-relaxed text-lg">{computer.content}</p>
+            {'paragraphs' in computer && Array.isArray(computer.paragraphs) ? (
+              <div className="space-y-4">
+                {computer.paragraphs.map((p, i) => (
+                  <p key={i} className="text-gray-600 leading-relaxed text-lg">
+                    {p}
+                  </p>
+                ))}
+              </div>
+            ) : (
+              'content' in computer && (
+                <p className="text-gray-600 leading-relaxed text-lg">{computer.content}</p>
+              )
+            )}
           </div>
         </article>
 
@@ -97,7 +121,19 @@ export default function AboutDoctorWoods() {
         >
           <div>
             <h3 className="text-2xl md:text-3xl font-bold text-charcoal-dark mb-4">{accolades.title}</h3>
-            <p className="text-gray-600 leading-relaxed text-lg">{accolades.content}</p>
+            {'paragraphs' in accolades && Array.isArray(accolades.paragraphs) ? (
+              <div className="space-y-4">
+                {accolades.paragraphs.map((p, i) => (
+                  <p key={i} className="text-gray-600 leading-relaxed text-lg">
+                    {p}
+                  </p>
+                ))}
+              </div>
+            ) : (
+              'content' in accolades && (
+                <p className="text-gray-600 leading-relaxed text-lg">{accolades.content}</p>
+              )
+            )}
           </div>
           <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-olive-200/60">
             <Image
@@ -110,20 +146,29 @@ export default function AboutDoctorWoods() {
           </div>
         </article>
 
-        {/* Coming soon trio */}
-        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-          <div className="rounded-2xl border border-olive-200 bg-olive-50/60 p-8 shadow-sm">
+        {/* Placeholder sections (legacy site: under construction / coming soon) */}
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8 mt-4">
+          <section
+            id="education-training"
+            className="rounded-2xl border border-olive-200 bg-olive-50/60 p-8 shadow-sm scroll-mt-32"
+          >
             <h3 className="text-lg font-bold text-charcoal-dark mb-3">{about.educationTraining.title}</h3>
             <p className="text-gray-600 text-sm leading-relaxed">{about.educationTraining.body}</p>
-          </div>
-          <div className="rounded-2xl border border-olive-200 bg-olive-50/60 p-8 shadow-sm">
+          </section>
+          <section
+            id="medical-career"
+            className="rounded-2xl border border-olive-200 bg-olive-50/60 p-8 shadow-sm scroll-mt-32"
+          >
             <h3 className="text-lg font-bold text-charcoal-dark mb-3">{about.medicalCareer.title}</h3>
             <p className="text-gray-600 text-sm leading-relaxed">{about.medicalCareer.body}</p>
-          </div>
-          <div className="rounded-2xl border border-olive-200 bg-olive-500/10 p-8 shadow-sm ring-1 ring-olive-300/40">
+          </section>
+          <section
+            id="patient-resources"
+            className="rounded-2xl border border-olive-200 bg-olive-500/10 p-8 shadow-sm ring-1 ring-olive-300/40 scroll-mt-32"
+          >
             <h3 className="text-lg font-bold text-charcoal-dark mb-3">{about.patientResources.title}</h3>
             <p className="text-gray-600 text-sm leading-relaxed">{about.patientResources.body}</p>
-          </div>
+          </section>
         </div>
       </div>
     </section>
