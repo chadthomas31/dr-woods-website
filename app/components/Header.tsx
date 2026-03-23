@@ -160,9 +160,12 @@ export default function Header() {
 
           {/* Mobile toggle */}
           <button
-            className="lg:hidden text-charcoal hover:text-olive-500"
+            type="button"
+            className="lg:hidden flex items-center justify-center min-h-[44px] min-w-[44px] rounded-lg text-charcoal hover:text-olive-500 hover:bg-olive-100/80 active:bg-olive-100"
             onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle menu"
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-primary-nav"
+            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
           >
             {mobileOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -170,7 +173,7 @@ export default function Header() {
 
         {/* Mobile Nav */}
         {mobileOpen && (
-          <nav className="lg:hidden pb-4 border-t border-olive-100 pt-4 space-y-1">
+          <nav id="mobile-primary-nav" className="lg:hidden pb-4 border-t border-olive-100 pt-4 space-y-1">
             {nav.map((item) => {
               const hasChildren = 'children' in item && item.children && item.children.length > 0
               return (

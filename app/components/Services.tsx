@@ -27,9 +27,12 @@ export default function Services() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-12">
             {conditions.map((condition, i) => (
-              <div key={i} className="bg-olive-50/80 rounded-lg shadow-sm hover:shadow-md transition-shadow p-6 text-center border border-olive-100">
+              <div
+                key={i}
+                className="bg-olive-50/80 rounded-lg shadow-sm hover:shadow-md transition-shadow p-4 sm:p-6 text-center border border-olive-100"
+              >
                 <p className="font-semibold text-charcoal-dark">{condition.name}</p>
               </div>
             ))}
@@ -46,7 +49,7 @@ export default function Services() {
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {serviceCards.map((card, i) => (
               <div key={i} className="bg-olive-50/80 rounded-xl shadow-md hover:shadow-lg transition-shadow overflow-hidden group border border-olive-100">
                 <div className="relative h-48">
@@ -55,6 +58,7 @@ export default function Services() {
                     alt={card.name}
                     fill
                     className="object-cover"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
                   <div className="absolute inset-0 bg-olive-900/20" />
                 </div>
