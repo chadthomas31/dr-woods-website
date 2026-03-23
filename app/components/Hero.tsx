@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { practiceData } from '../lib/practice-data'
+import DoctorSignature from './DoctorSignature'
 import heroEnrichingLives from '../../public/images/hero-enriching-lives.jpg'
 
 export default function Hero() {
@@ -22,9 +23,12 @@ export default function Hero() {
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div className="text-center">
-          <p className="text-amber-200/90 text-sm font-medium tracking-wider uppercase mb-4">
-            {doctor.name}
-          </p>
+          <div className="mb-4 flex justify-center flex-col items-center gap-1">
+            <span className="sr-only">
+              {doctor.name} — {doctor.subtitle}
+            </span>
+            <DoctorSignature onDarkBackground className="h-8 sm:h-9 max-w-[280px]" />
+          </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-serif leading-tight">
             <span className="block">{hero.line1}</span>
             <span className="block mt-2">{hero.line2}</span>

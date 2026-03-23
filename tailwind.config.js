@@ -27,7 +27,6 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
         serif: ['var(--font-merriweather)', 'Merriweather', 'Georgia', 'serif'],
-        cursive: ['var(--font-cursive)', 'Dancing Script', 'cursive'],
       },
     },
   },

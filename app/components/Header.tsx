@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X, Phone, ChevronDown } from 'lucide-react'
 import { practiceData } from '../lib/practice-data'
+import DoctorSignature from './DoctorSignature'
 
 function DropdownMenu({
   item,
@@ -131,8 +132,9 @@ export default function Header() {
         <div className="flex justify-between items-center py-4">
           {/* Logo - centered under phone #, 0.5in from left, 1in from menu */}
           <Link href="/" className="block pl-[0.5in] mr-[1in] shrink-0">
-            <h1 className="text-3xl sm:text-4xl font-cursive text-charcoal-dark whitespace-nowrap">{doctor.name}</h1>
-            <p className="text-olive-500 text-sm font-medium whitespace-nowrap">{doctor.subtitle}</p>
+            <span className="sr-only">{doctor.name}</span>
+            <DoctorSignature className="h-9 max-h-[2.75rem] sm:h-11 sm:max-h-[3rem]" />
+            <p className="text-olive-500 text-sm font-medium whitespace-nowrap mt-1">{doctor.subtitle}</p>
           </Link>
 
           {/* Desktop Nav - single line, no wrap */}

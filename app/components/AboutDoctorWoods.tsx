@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { practiceData } from '../lib/practice-data'
+import DoctorSignature from './DoctorSignature'
 
 export default function AboutDoctorWoods() {
   const { about } = practiceData
@@ -50,6 +51,9 @@ export default function AboutDoctorWoods() {
                 <p className="text-gray-600 leading-relaxed text-lg">{journey.content}</p>
               )
             )}
+            <div className="mt-10 pt-2 border-t border-olive-100">
+              <DoctorSignature className="h-11 sm:h-12 max-w-[min(100%,340px)]" />
+            </div>
           </div>
         </article>
 

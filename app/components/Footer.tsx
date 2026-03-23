@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Phone, Mail, MapPin } from 'lucide-react'
 import { practiceData } from '../lib/practice-data'
+import DoctorSignature from './DoctorSignature'
 
 const learnLinks = [
   { label: 'Home', href: '/' },
@@ -24,7 +25,10 @@ export default function Footer() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Practice */}
           <div>
-            <h3 className="text-3xl font-cursive mb-2">{doctor.name}</h3>
+            <h3 className="sr-only">{doctor.name}</h3>
+            <div className="mb-3">
+              <DoctorSignature onDarkBackground className="h-9 sm:h-10" />
+            </div>
             <p className="text-olive-400 text-sm font-medium mb-4">{doctor.subtitle}</p>
             <p className="text-gray-400 text-sm leading-relaxed">{doctor.tagline}</p>
           </div>
