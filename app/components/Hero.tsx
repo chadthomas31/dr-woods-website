@@ -1,29 +1,40 @@
+import Link from 'next/link'
+import Image from 'next/image'
 import { practiceData } from '../lib/practice-data'
 
 export default function Hero() {
-  const { doctor, hero } = practiceData
+  const { hero, doctor } = practiceData
 
   return (
-    <section className="pt-24 relative min-h-[70vh] flex items-center justify-center overflow-hidden">
-      {/* Warm gradient background to simulate the photography feel */}
-      <div className="absolute inset-0 bg-gradient-to-br from-amber-950/60 via-black to-stone-900/40" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50" />
+    <section className="pt-28 relative min-h-[60vh] flex items-center overflow-hidden">
+      {/* Full-bleed banner image - matching current site */}
+      <Image
+        src="/images/hero-banner.webp"
+        alt="Psychiatric care and patient wellness"
+        fill
+        className="object-cover"
+        priority
+        sizes="100vw"
+      />
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-charcoal-dark/60" />
 
-      <div className="relative z-10 text-center px-4 py-20">
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white uppercase tracking-widest mb-8">
-          {hero.headline}
-        </h1>
-
-        <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-          {hero.description}
-        </p>
-
-        <a
-          href={doctor.phoneHref}
-          className="inline-block bg-gold-400 hover:bg-gold-500 text-black px-10 py-4 font-semibold text-sm uppercase tracking-widest transition-all hover:shadow-lg hover:shadow-gold-400/20"
-        >
-          Schedule a Consultation
-        </a>
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <div className="text-center">
+          <p className="text-amber-200/90 text-sm font-medium tracking-wider uppercase mb-4">
+            {doctor.name}
+          </p>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-serif leading-tight">
+            <span className="block">{hero.line1}</span>
+            <span className="block mt-2">{hero.line2}</span>
+          </h1>
+          <Link
+            href="/contact"
+            className="inline-block mt-8 bg-amber-700/90 hover:bg-amber-600 text-white font-semibold py-4 px-10 rounded-sm transition-colors uppercase tracking-wide"
+          >
+            Make an Appointment
+          </Link>
+        </div>
       </div>
     </section>
   )
