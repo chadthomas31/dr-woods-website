@@ -114,7 +114,7 @@ npm run dev -- -p 3001
 - `package.json` - Updated with all dependencies
 - `tailwind.config.js` - Properly configured
 - `postcss.config.mjs` - Correct plugins
-- `next.config.ts` - TypeScript configuration
+- `next.config.js` - Next.js configuration (JS; Next 14.1 loads `.js` / `.mjs` only)
 - `tsconfig.json` - Fixed settings
 
 ✅ **Source Files**:

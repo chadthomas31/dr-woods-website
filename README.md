@@ -52,7 +52,7 @@ dr-woods-website/
 ├── public/                  # Static assets
 ├── tailwind.config.js       # Tailwind CSS configuration
 ├── postcss.config.mjs       # PostCSS configuration
-├── next.config.ts           # Next.js configuration
+├── next.config.js           # Next.js configuration
 └── package.json             # Dependencies and scripts
 ```
 
