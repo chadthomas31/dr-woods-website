@@ -23,20 +23,23 @@ export const practiceData = {
       href: "/about",
       children: [
         { label: "Journey of Passion", href: "/about#journey" },
-        { label: "Dance Career", href: "/about#dance" },
-        { label: "computer books", href: "/about#computer-books" },
+        { label: "Dance Career", href: "/about#dance-section" },
+        { label: "Computer books", href: "/about#computer-books" },
         { label: "Accolades and testimonials", href: "/about#accolades" },
       ],
     },
     {
-      label: "My Services",
+      label: "Services",
       href: "/services",
       children: [
-        { label: "Psychiatric Evaluation", href: "/services" },
-        { label: "Individual Therapy", href: "/services" },
-        { label: "Medication Management", href: "/services" },
-        { label: "Family/Group Therapy", href: "/services" },
-        { label: "Telepsychiatry", href: "/services" },
+        { label: "Psychiatric Diagnostic Evaluation", href: "/services#psychiatric-diagnostic-evaluation" },
+        { label: "Individual Psychotherapy", href: "/services#individual-psychotherapy" },
+        { label: "Medication Management", href: "/services#medication-management" },
+        { label: "Case Management", href: "/services#case-management" },
+        { label: "Competency Evaluations", href: "/services#competency-evaluations" },
+        { label: "Other Treatments", href: "/services#other-treatments" },
+        { label: "Family/Group Therapies", href: "/services#family-group-therapies" },
+        { label: "Telepsychiatry", href: "/services#telepsychiatry" },
       ],
     },
     { label: "Policies and Procedures", href: "/policies" },
@@ -87,6 +90,7 @@ export const practiceData = {
   ],
   services: [
     {
+      slug: "psychiatric-diagnostic-evaluation",
       name: "Psychiatric Diagnostic Evaluation",
       description:
         "Includes face to face meeting with patient, also gathering additional information from family, friends, the referral source and careful review of any medical records. Duration: 90 minute interview. Blood tests or other medical tests may be ordered. Usually a working diagnosis is established followed by some initial lab tests and an interim treatment plan may be proposed. A report will be sent to the referencing entity.",
@@ -94,41 +98,48 @@ export const practiceData = {
       hasBookButton: true,
     },
     {
+      slug: "individual-psychotherapy",
       name: "Individual Psychotherapy",
       description:
         "I am trained in a variety of psychotherapies including psychodynamic, cognitive behavioral psychotherapy, supportive therapy, mindfulness and relaxation, and the array of PTSD therapies. Therapy sessions generally are 50 minutes.",
       duration: "45-50 minutes",
     },
     {
+      slug: "medication-management",
       name: "Medication Management",
       description:
         "I may prescribe and monitor psychotropic medications for my patients. This is determined best during the Psychiatric Diagnostic Evaluation. I will discuss the risks, benefits, side effects, and if a medication is best for you. Appointments generally are 30 minutes. Once a dosing schedule has been finalized, more routine Medication Management is needed, and each appointment is approximately 30 minutes.",
       duration: "25 minutes",
     },
     {
+      slug: "case-management",
       name: "Case Management",
       description:
         "I oversee the responsibilities of treatment plan where a multi-disciplinary team of professionals are working with the patient. This is typically required in settings of an involuntary nature involving court orders. Another may require placement in a residential or long-term care facility. I work with each of the team members to predict how much time is required for this service.",
       duration: "Varies",
     },
     {
+      slug: "competency-evaluations",
       name: "Competency Evaluations",
       description:
         "In probate and criminal matters, a psychiatrist or psychologist may be asked by courts to make informed decisions regarding healthcare and financial issues involving the individual. These evaluations are set from 45-50 minutes.",
       duration: "45-50 minutes",
     },
     {
+      slug: "other-treatments",
       name: "Other Treatments",
       description:
         "I also have training in various additional treatment modalities including EMDR, hypnotherapy, electroconvulsive therapy (ECT), brain stimulation, neurofeedback, and refer to some trained specialists for ketamine infusion or treatment-resistant depression.",
     },
     {
+      slug: "family-group-therapies",
       name: "Family/Group Therapies",
       description:
         "Family and group psychotherapies are probably the most powerful of all therapy types. I am trained in both modalities and also have several excellent referral sources in the Orange County Area.",
       hasBookButton: true,
     },
     {
+      slug: "telepsychiatry",
       name: "Telepsychiatry",
       description:
         "I currently offer telepsychiatry sessions using Apple's FaceTime as well as the Zoom platform. With FaceTime the patient must have access to an iPhone, iPad, Mac Laptop, or Mac computer. Zoom works on all Apple and Android devices as well as on PC's. Using this technology allows me to communicate face to face but remotely.",
