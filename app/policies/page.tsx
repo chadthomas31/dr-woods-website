@@ -2,7 +2,7 @@ import BookCTA from '../components/BookCTA'
 import { practiceData } from '../lib/practice-data'
 
 export default function PoliciesPage() {
-  const { hipaa, fees, feesNotes, payment, cancellations } = practiceData
+  const { hipaa, fees, feesNotes, payment, cancellations, websitePrivacy } = practiceData
 
   return (
     <div className="min-h-screen pt-40">
@@ -10,6 +10,45 @@ export default function PoliciesPage() {
         <div className="max-w-5xl mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-charcoal-dark mb-4">{hipaa.title}</h1>
           <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">{hipaa.intro}</p>
+        </div>
+      </section>
+
+      {/* Website privacy (use of this site — distinct from HIPAA clinical notice below) */}
+      <section id="website-privacy" className="pb-16 scroll-mt-36 border-b border-gray-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-charcoal-dark mb-2">{websitePrivacy.title}</h2>
+          <p className="text-gray-500 text-sm mb-6">{websitePrivacy.lastUpdated}</p>
+          <div className="space-y-4 text-gray-600 text-sm leading-relaxed mb-10">
+            {websitePrivacy.intro.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
+          </div>
+          {websitePrivacy.sections.map((section) => (
+            <div key={section.heading} className="mb-10 last:mb-0">
+              <h3 className="text-lg font-bold text-charcoal-dark mb-3">{section.heading}</h3>
+              {'paragraphs' in section && section.paragraphs && (
+                <div className="space-y-3 text-gray-600 text-sm leading-relaxed mb-3">
+                  {section.paragraphs.map((p, i) => (
+                    <p key={i}>{p}</p>
+                  ))}
+                </div>
+              )}
+              {'list' in section && section.list && (
+                <ul className="list-disc pl-5 space-y-2 text-gray-600 text-sm leading-relaxed mb-3">
+                  {section.list.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              )}
+              {'footerParagraphs' in section && section.footerParagraphs && (
+                <div className="space-y-3 text-gray-600 text-sm leading-relaxed mt-3">
+                  {section.footerParagraphs.map((p, i) => (
+                    <p key={i}>{p}</p>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </section>
 

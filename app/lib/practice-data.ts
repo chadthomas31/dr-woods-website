@@ -52,7 +52,11 @@ export const practiceData = {
   homeAbout: {
     label: "About Me",
     title: "Receive The Highest Quality Of Care Right In Your Home",
-    text: "Dr. Woods provides the highest quality comprehensive psychiatric evaluations and medication management right in the comfort of your own home, making it easy to receive the quality of care you and your family deserve. With over 25 years of clinical experience and a deeply personal understanding of healthcare, Dr. Woods brings exceptional psychiatric care directly to you.",
+    paragraphs: [
+      "Your mental health is just as important as your physical health; therefore, you must not settle for less. With a concierge psychiatrist such as Robert Woods MD, you can receive the highest quality of personalized care right in the comfort of your own home.",
+      "I travel to my patients' homes, schools, places of work, or anywhere they so desire, to help diagnose and treat various psychiatric conditions.",
+      "As a psychiatrist in private practice for more than 25 years, I had to stop my clinical practice to focus on my health. I was diagnosed with stage IV cancer and underwent chemotherapy for six months. By 2019, I had been cancer-free for more than five years. Without a traditional office, I returned to practice in a new way: concierge psychiatry, with care in your home and telepsychiatry when appropriate. For more about my background, visit the About page.",
+    ],
   },
   mission: {
     title: "Our Mission",
@@ -93,7 +97,7 @@ export const practiceData = {
       slug: "psychiatric-diagnostic-evaluation",
       name: "Psychiatric Diagnostic Evaluation",
       description:
-        "Includes face to face meeting with patient, also gathering additional information from family, friends, the referral source and careful review of any medical records. Duration: 90 minute interview. Blood tests or other medical tests may be ordered. Usually a working diagnosis is established followed by some initial lab tests and an interim treatment plan may be proposed. A report will be sent to the referencing entity.",
+        "Includes face-to-face meeting with the patient, also gathering additional information from family, friends, the referral source, and careful review of any medical records. Duration: 90-minute interview. Blood tests or other medical tests may be ordered. Usually a working diagnosis is formulated by the end of the interview, followed by some initial lab tests, and an interim treatment plan may be proposed. A report will be sent to the referring entity.",
       duration: "90 minutes",
       hasBookButton: true,
     },
@@ -101,48 +105,48 @@ export const practiceData = {
       slug: "individual-psychotherapy",
       name: "Individual Psychotherapy",
       description:
-        "I am trained in a variety of psychotherapies including psychodynamic, cognitive behavioral psychotherapy, supportive therapy, mindfulness and relaxation, and the array of PTSD therapies. Therapy sessions generally are 50 minutes.",
+        "I am skilled in a number of psychotherapies including psychodynamic psychotherapy, cognitive behavioral psychotherapy, supportive therapy, mindful meditation, and play therapy for children. I customize each treatment using one or more of the aforementioned therapies. I also draw on PTSD-focused approaches where appropriate. Therapy sessions generally last 50 minutes.",
       duration: "45-50 minutes",
     },
     {
       slug: "medication-management",
       name: "Medication Management",
       description:
-        "I may prescribe and monitor psychotropic medications for my patients. This is determined best during the Psychiatric Diagnostic Evaluation. I will discuss the risks, benefits, side effects, and if a medication is best for you. Appointments generally are 30 minutes. Once a dosing schedule has been finalized, more routine Medication Management is needed, and each appointment is approximately 30 minutes.",
+        "I may recommend psychotropic medications for some patients. This is determined during the Psychiatric Diagnostic Evaluation. I will discuss the risks, benefits, and side effects of any medication I prescribe, and review your current medications and over-the-counter supplements to avoid interactions. Once a dosing strategy is in place, patients receiving medication are typically seen at least every three months unless we agree otherwise. Medication management visits are billed in line with the fee schedule (commonly 25-minute sessions; longer visits when clinically needed).",
       duration: "25 minutes",
     },
     {
       slug: "case-management",
       name: "Case Management",
       description:
-        "I oversee the responsibilities of treatment plan where a multi-disciplinary team of professionals are working with the patient. This is typically required in settings of an involuntary nature involving court orders. Another may require placement in a residential or long-term care facility. I work with each of the team members to predict how much time is required for this service.",
+        "I provide coordination and execution of treatment plans where a multi-disciplinary treatment approach is the most effective. Some patients may need physical or occupational therapy; others may require placement in a residential or long-term care facility. I work with many excellent licensed clinical social workers, psychiatric nurse practitioners, and other ancillary staff. It is impossible to predict how much time is required for this service.",
       duration: "Varies",
     },
     {
       slug: "competency-evaluations",
       name: "Competency Evaluations",
       description:
-        "In probate and criminal matters, a psychiatrist or psychologist may be asked by courts to make informed decisions regarding healthcare and financial issues involving the individual. These evaluations are set from 45-50 minutes.",
-      duration: "45-50 minutes",
+        "When a patient's competency is in question regarding the ability to make informed decisions about healthcare and financial matters, I evaluate the patient and render an opinion for use by attorneys and the court. These evaluations typically last from 90 to 120 minutes.",
+      duration: "90-120 minutes",
     },
     {
       slug: "other-treatments",
       name: "Other Treatments",
       description:
-        "I also have training in various additional treatment modalities including EMDR, hypnotherapy, electroconvulsive therapy (ECT), brain stimulation, neurofeedback, and refer to some trained specialists for ketamine infusion or treatment-resistant depression.",
+        "I have referral resources for a number of therapeutic modalities including EMDR, hypnotherapy, electroconvulsive therapy (ECT), deep brain stimulation, and ketamine for severe suicidal ideation or treatment-resistant depression, in coordination with trained specialists.",
     },
     {
       slug: "family-group-therapies",
       name: "Family/Group Therapies",
       description:
-        "Family and group psychotherapies are probably the most powerful of all therapy types. I am trained in both modalities and also have several excellent referral sources in the Orange County Area.",
+        "Family and group psychotherapies are probably the most powerful of all therapy types. I am trained in both modalities and also have several excellent referral sources in the Orange County area.",
       hasBookButton: true,
     },
     {
       slug: "telepsychiatry",
       name: "Telepsychiatry",
       description:
-        "I currently offer telepsychiatry sessions using Apple's FaceTime as well as the Zoom platform. With FaceTime the patient must have access to an iPhone, iPad, Mac Laptop, or Mac computer. Zoom works on all Apple and Android devices as well as on PC's. Using this technology allows me to communicate face to face but remotely.",
+        "I currently offer telepsychiatry using Apple's FaceTime as well as the Zoom platform. With FaceTime, the patient must have access to an iPhone, iPad, Mac laptop, or Mac computer. Zoom works on Apple and Android devices as well as PCs. This allows us to meet face-to-face remotely with the same attention as in-person care when appropriate.",
       hasBookButton: true,
     },
   ],
@@ -269,6 +273,75 @@ export const practiceData = {
       "I, Robert Woods MD, strictly adhere to certain clinical policies and procedures as a concierge psychiatrist. These are outlined below. Please read on to discover interesting facts about working with me and should you have inquiries or concerns contact me in Irvine, California.",
     privacyNotice:
       "THIS NOTICE DESCRIBES HOW MEDICAL INFORMATION ABOUT YOU MAY BE USED AND DISCLOSED AND HOW YOU CAN GET ACCESS TO THIS INFORMATION. PLEASE REVIEW IT CAREFULLY.",
+  },
+  /** Website / marketing privacy (distinct from HIPAA notice). Migrated from legacy data-privacy page. */
+  websitePrivacy: {
+    title: "Data Privacy Policy",
+    lastUpdated: "This policy was last updated on July 7, 2024.",
+    intro: [
+      "This privacy policy sets out how Robert L Woods MD uses and protects any information that you give Robert L Woods MD when you use this website.",
+      "Robert L Woods MD is committed to ensuring that your privacy is protected. Should we ask you to provide certain information by which you can be identified when using this website, you can be assured that it will only be used in accordance with this privacy statement.",
+      "Robert L Woods MD may change this policy from time to time by updating this page. You should check this page from time to time to ensure that you are happy with any changes.",
+    ],
+    sections: [
+      {
+        heading: "What we collect",
+        list: [
+          "Name",
+          "Contact information including email address",
+          "Demographic information such as zip code, preferences, and interests",
+          "Other information relevant to customer surveys and/or offers",
+        ],
+      },
+      {
+        heading: "What we do with the information we gather",
+        paragraphs: [
+          "We require this information to understand your needs and provide you with a better service, and in particular for the following reasons:",
+        ],
+        list: [
+          "Internal record keeping.",
+          "We may use the information to improve our products and services.",
+          "We may periodically send promotional emails about new products, special offers, or other information which we think you may find interesting using the email address which you have provided.",
+          "From time to time, we may also use your information to contact you for market research purposes. We may contact you by email, SMS, or phone. We may use the information to customize the website according to your interests.",
+        ],
+      },
+      {
+        heading: "Security",
+        paragraphs: [
+          "We are committed to ensuring that your information is secure. In order to prevent unauthorized access or disclosure, we have put in place suitable physical, electronic, and managerial procedures to safeguard and secure the information we collect online.",
+        ],
+      },
+      {
+        heading: "How we use cookies",
+        paragraphs: [
+          "A cookie is a small file that asks permission to be placed on your computer's hard drive. Once you agree, the file is added and the cookie helps analyze web traffic or lets you know when you visit a particular site. Cookies allow web applications to respond to you as an individual. The web application can tailor its operations to your needs, likes, and dislikes by gathering and remembering information about your preferences.",
+          "We may use traffic log cookies to identify which pages are being used. This helps us analyze data about webpage traffic and improve our website in order to tailor it to customer needs. We only use this information for statistical analysis purposes and then the data is removed from the system.",
+          "Overall, cookies help us provide you with a better website experience, by enabling us to monitor which pages you find useful and which you do not. A cookie in no way gives us access to your computer or any information about you, other than the data you choose to share with us.",
+          "Your web browser will allow you to choose to accept or decline cookies. Most web browsers automatically accept cookies, but you can usually modify your browser setting to decline cookies if you prefer. This may prevent you from taking full advantage of the website.",
+        ],
+      },
+      {
+        heading: "Links to other websites",
+        paragraphs: [
+          "Our website may contain links to other websites of interest. However, once you have used these links to leave our site, you should note that we do not have any control over that other website. Therefore, we cannot be responsible for the protection and privacy of any information which you provide whilst visiting such sites and such sites are not governed by this privacy statement. You should exercise caution and look at the privacy statement applicable to the website in question.",
+        ],
+      },
+      {
+        heading: "Controlling your personal information",
+        paragraphs: [
+          "You may choose to restrict the collection or use of your personal information in the following ways:",
+        ],
+        list: [
+          "Whenever you are asked to fill in a form on the website, look for a box that you can click to indicate that you do not want the information to be used by anybody for direct marketing purposes.",
+          "If you have previously agreed to us using your personal information for direct marketing purposes, you may change your mind at any time by emailing us at rwoodsmd@me.com.",
+        ],
+        footerParagraphs: [
+          "We will not sell, distribute, or lease your personal information to third parties unless we have your permission or are required by law to do so. We may use your personal information to send you promotional information about third parties which we think you may find interesting if you tell us that you wish this to happen.",
+          "You may request details of personal information which we hold about you.",
+          "If you believe that any information we are holding on you is incorrect or incomplete, please write to or email us as soon as possible. We will promptly correct any information found to be incorrect. To request a copy of the information disclosure provided by Robert L Woods MD, please contact us via email at rwoodsmd@me.com. Please allow 30 days for a response.",
+        ],
+      },
+    ],
   },
   faq: [
     {

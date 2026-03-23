@@ -10,6 +10,7 @@ const learnLinks = [
 
 const policyLinks = [
   { label: 'Policies & procedures', href: '/policies' },
+  { label: 'Website data privacy', href: '/policies#website-privacy' },
   { label: 'Fee schedule', href: '/policies#fees' },
   { label: 'HIPAA / privacy practices', href: '/policies#hipaa-notice' },
 ] as const
@@ -118,7 +119,7 @@ export default function Footer() {
           </p>
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-2">
             <Link
-              href="/policies"
+              href="/policies#website-privacy"
               className="text-gray-500 hover:text-olive-400 text-xs transition-colors"
             >
               Privacy policy
