@@ -15,6 +15,8 @@ export default function DoctorSignature({ className = '', onDarkBackground = fal
   return (
     <Image
       src={signatureImg}
+      width={signatureImg.width}
+      height={signatureImg.height}
       alt="Signature: Robert L. Woods, M.D."
       className={`h-14 w-auto max-w-full object-contain object-left sm:h-16 md:h-[4.25rem] ${onDarkBackground ? 'brightness-0 invert' : ''} ${className}`}
       sizes="(max-width: 640px) 300px, (max-width: 1024px) 360px, 400px"

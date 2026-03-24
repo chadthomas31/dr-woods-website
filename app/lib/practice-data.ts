@@ -1,3 +1,12 @@
+/** Archive photos on About; opening pair use a dedicated layout. */
+export type DanceGalleryEntry = {
+  src: string
+  caption: string
+  color?: boolean
+  showCaption?: boolean
+  captionVariant?: 'serif-bottom-left' | 'serif-bottom-center'
+}
+
 export const practiceData = {
   doctor: {
     name: "Robert L Woods MD",
@@ -50,7 +59,7 @@ export const practiceData = {
     line2: "Enriching Lives",
   },
   homeAbout: {
-    label: "About Me",
+    label: "Concierge Psychiatry",
     title: "Receive The Highest Quality Of Care Right In Your Home",
     paragraphs: [
       "Your mental health is just as important as your physical health; therefore, you must not settle for less. With a concierge psychiatrist such as Robert Woods MD, you can receive the highest quality of personalized care right in the comfort of your own home.",
@@ -102,58 +111,94 @@ export const practiceData = {
     {
       slug: "psychiatric-diagnostic-evaluation",
       name: "Psychiatric Diagnostic Evaluation",
+      shortName: "Diagnostic Evaluation",
       description:
         "Includes face-to-face meeting with the patient, also gathering additional information from family, friends, the referral source, and careful review of any medical records. Duration: 90-minute interview. Blood tests or other medical tests may be ordered. Usually a working diagnosis is formulated by the end of the interview, followed by some initial lab tests, and an interim treatment plan may be proposed. A report will be sent to the referring entity.",
       duration: "90 minutes",
       hasBookButton: true,
+      image: "/images/services/psychiatric-evaluation.jpeg",
+      icon: "clipboard-check",
+      featured: true,
+      category: "Psychiatric Services",
     },
     {
       slug: "individual-psychotherapy",
       name: "Individual Psychotherapy",
+      shortName: "Psychotherapy",
       description:
         "I am skilled in a number of psychotherapies including psychodynamic psychotherapy, cognitive behavioral psychotherapy, supportive therapy, mindful meditation, and play therapy for children. I customize each treatment using one or more of the aforementioned therapies. I also draw on PTSD-focused approaches where appropriate. Therapy sessions generally last 50 minutes.",
       duration: "45-50 minutes",
+      image: "/images/services/psychotherapy.jpeg",
+      icon: "brain",
+      featured: true,
+      category: "Psychiatric Services",
     },
     {
       slug: "medication-management",
       name: "Medication Management",
+      shortName: "Medication Management",
       description:
         "I may recommend psychotropic medications for some patients. This is determined during the Psychiatric Diagnostic Evaluation. I will discuss the risks, benefits, and side effects of any medication I prescribe, and review your current medications and over-the-counter supplements to avoid interactions. Once a dosing strategy is in place, patients receiving medication are typically seen at least every three months unless we agree otherwise. Medication management visits are billed in line with the fee schedule (commonly 25-minute sessions; longer visits when clinically needed).",
       duration: "25 minutes",
+      image: "/images/services/medication-management.jpeg",
+      icon: "pill",
+      category: "Psychiatric Services",
     },
     {
       slug: "case-management",
       name: "Case Management",
+      shortName: "Case Management",
       description:
         "I provide coordination and execution of treatment plans where a multi-disciplinary treatment approach is the most effective. Some patients may need physical or occupational therapy; others may require placement in a residential or long-term care facility. I work with many excellent licensed clinical social workers, psychiatric nurse practitioners, and other ancillary staff. It is impossible to predict how much time is required for this service.",
       duration: "Varies",
+      image: "/images/services/case-management.jpeg",
+      icon: "users",
+      category: "Psychiatric Services",
     },
     {
       slug: "competency-evaluations",
       name: "Competency Evaluations",
+      shortName: "Competency Evaluations",
       description:
         "When a patient's competency is in question regarding the ability to make informed decisions about healthcare and financial matters, I evaluate the patient and render an opinion for use by attorneys and the court. These evaluations typically last from 90 to 120 minutes.",
       duration: "90-120 minutes",
+      image: "/images/services/competency-evaluation.jpeg",
+      icon: "scale",
+      category: "Psychiatric Services",
     },
     {
       slug: "other-treatments",
       name: "Other Treatments",
+      shortName: "Other Treatments",
       description:
         "I have referral resources for a number of therapeutic modalities including EMDR, hypnotherapy, electroconvulsive therapy (ECT), deep brain stimulation, and ketamine for severe suicidal ideation or treatment-resistant depression, in coordination with trained specialists.",
+      image: "/images/services/other-treatments.jpeg",
+      icon: "sparkles",
+      category: "Psychiatric Services",
     },
     {
       slug: "family-group-therapies",
       name: "Family/Group Therapies",
+      shortName: "Family Therapy",
       description:
         "Family and group psychotherapies are probably the most powerful of all therapy types. I am trained in both modalities and also have several excellent referral sources in the Orange County area.",
       hasBookButton: true,
+      image: "/images/services/family-therapy.jpeg",
+      icon: "heart",
+      featured: true,
+      category: "Family/Group Therapies",
     },
     {
       slug: "telepsychiatry",
       name: "Telepsychiatry",
+      shortName: "Telepsychiatry",
       description:
         "I currently offer telepsychiatry using Apple's FaceTime as well as the Zoom platform. With FaceTime, the patient must have access to an iPhone, iPad, Mac laptop, or Mac computer. Zoom works on Apple and Android devices as well as PCs. This allows us to meet face-to-face remotely with the same attention as in-person care when appropriate.",
       hasBookButton: true,
+      image: "/images/services/telepsychiatry.jpeg",
+      icon: "video",
+      featured: true,
+      category: "Telepsychiatry",
     },
   ],
   testimonials: [
@@ -207,7 +252,7 @@ export const practiceData = {
     },
     sections: [
       {
-        title: "A Journey Of Passion",
+        title: "A journey of passion",
         paragraphs: [
           "Being a native of Orange County, I moved at the age of eight to Napa, California where I attended local schools. My first taste of passion came to me in Napa when I was introduced to the world of classical ballet. I studied with Shirley Carson Ray, a former dancer with the San Francisco Ballet. After two years of intense training under Mrs. Ray, I received a scholarship for advanced training with the San Francisco Ballet. I eventually became an apprentice with the company. At the age of 18, I decided to relocate to New York City for additional training. I studied with Richard Thomas and Barbara Fallis at the New York School of Ballet. After a school recital, Alfonso Catá, director of the Frankfurt Opera Ballet in Frankfurt Germany, offered me a position with the company. I performed with that company for three years obtaining the role of soloist dancer. From there I was hired by the Zürich Opera Ballet under the direction of Patricia Neary and George Balanchine. After three years of living and dancing in Zürich Switzerland, I returned to the United States and danced with several companies including The Los Angeles Ballet, Pacific Northwest Ballet, and Ballet Pacifica in Laguna Beach. I had returned to Orange County.",
           "After 15 years of professional dancing, I decided it was time to focus on my academic career. A guidance counselor at Saddleback Community College recognized my interest in mathematics and the new technology of computers. She suggested I pursue an education in the area of computer science. I had found a new passion and enrolled at Saddleback, where I graduated with a 4.0 GPA and earned the award for Outstanding Performance in Mathematics 1984. I transferred to the University of California Irvine (UCI) to complete my education and received a Bachelor of Science degree in Information and Computer Sciences, graduating Cum Laude also receiving an appointment to Phi Beta Kappa. During my senior year as a computer science major, I found my passion shifting to medicine after working on a dance medicine project with the Department of Dance at UCI. I completed an additional year at UCI earning a Bachelor of Science degree in biology, again graduating Cum Laude.",
@@ -235,11 +280,7 @@ export const practiceData = {
       },
       {
         title: "Accolades and Testimonials",
-        paragraphs: [
-          "Acceptance letter to Harvard Medical School (1987).",
-          "Top Psychiatrist in California, Top Doctor Competition (Winter 2013).",
-          "Further honors and testimonials will be added here over time. Dr. Woods's patients consistently praise his personalized approach, accessibility, and genuine commitment to their well-being.",
-        ],
+        paragraphs: [],
       },
     ],
     /** Hero images from current site about-us page */
@@ -248,6 +289,24 @@ export const practiceData = {
       computerBooks: '/images/about/about-us-2.jpeg',
       accolades: '/images/about/about-us-3.jpeg',
     },
+    /** Accolades images */
+    accoladesGallery: [
+      { src: '/images/about/accolades/harvard-letter.webp', caption: 'Acceptance letter to Harvard Medical School (1987).' },
+      { src: '/images/about/accolades/top-doctor-award.webp', caption: 'Top Psychiatrist in California, Top Doctor Competition (Winter 2013).' },
+    ],
+    /** ComputerBooks gallery images from early marketing */
+    computerBooksGallery: [
+      { src: '/images/about/computerbooks/cb-01.webp', alt: 'ComputerBooks marketing material' },
+      { src: '/images/about/computerbooks/cb-02.webp', alt: 'ComputerBooks product display' },
+      { src: '/images/about/computerbooks/cb-03.webp', alt: 'ComputerBooks software demonstration' },
+      { src: '/images/about/computerbooks/cb-04.webp', alt: 'ComputerBooks on handheld device' },
+      { src: '/images/about/computerbooks/cb-05.webp', alt: 'ComputerBooks promotional material' },
+      { src: '/images/about/computerbooks/cb-06.webp', alt: 'ComputerBooks trade show display' },
+      { src: '/images/about/computerbooks/cb-07.webp', alt: 'ComputerBooks software features' },
+      { src: '/images/about/computerbooks/cb-08.webp', alt: 'ComputerBooks product brochure' },
+      { src: '/images/about/computerbooks/cb-09.webp', alt: 'Projected sales of palmtop units graph' },
+      { src: '/images/about/computerbooks/cb-10.webp', alt: 'ComputerBooks documentation' },
+    ],
     educationTraining: {
       title: 'Education & Training',
       body: 'This section is being expanded with details about medical school, residency, and continuing education. Check back soon for the full story.',
@@ -260,18 +319,105 @@ export const practiceData = {
       title: 'Patient Resources (Coming Soon)',
       body: 'I will curate books, trusted websites, medical apps, and other tools to support your journey toward improved mental health.',
     },
+    /** Subheading under “Dance Career” on the archival gallery section */
+    danceArchiveSubtitle: 'Frankfurt, Germany · Zürich, Switzerland',
+    /** Two-column narrative text from legacy site */
+    danceNarrative: {
+      column1: [
+        "While performing in a recital at the New York School of Ballet, I was selected to dance the poet in a classical ballet known as Les Sylphide. I was honored that Ricard Thomas and Barbara Fallis, my teachers, selected me for this role. After the performance, Mr. Thomas pulled me aside and introduced me to Alphonso Catà, director of the Frankfurt Opera Ballet in Frankfurt Germany. Mr. Catà offered me a one-year contract as a member of the corps de ballet. So within four weeks I made a hasty trip to California to bid farewell to my family and arrived in Frankfurt in late July of 1974.",
+        "The company had many American dancers so I felt right at home. I spent the next three years dancing many different roles in classical ballets such as Swan Lake, Sleeping Beauty, and Coppelia; neo-classical ballets especially ballets of George Balanchine including Serenade, Allegro Briliant, Divertimento Number Fifteen, and La Valse; modern ballets by various artists including Kent Stowell, and John Butler. At the end of my second year with the company, I was promoted to soloist. I had the good fortune to tour with the company to Birmingham England, Lichtenstein, Belgrade Yugoslavia, and Brighton England. At the end of my third year, the management changed and I left the company for the Zürich Opera Ballet in July 1977.",
+      ],
+      column2: [
+        "The Zürich Opera Ballet was quite a different experience. Aside from living in the cleanest, charming, old world town, the theater was subsidized by the Swiss government and produced lavish productions both opera and ballet. Mr. George Balanchine, of the New York City Ballet, selected the Zürich Opera Ballet to be the European sibling of his world famous New York City Ballet. He would come to work with our company once or twice a year. He selected former New York City Ballerina, Patrica Neary, to run the company. Our repertoire was filled again with classical, neo-classical and modern dance works.",
+        "We performed the following works by Mr. Balanchine; Agon, Symphony in C, Western Symphony, Midsummer's Night Dream, Who Cares, La Valse and Bugaku just to mention a few. Our classical repertoire included Rudolph Nurevey's full length ballet Don Quixote. Mr. Neurevey often danced the lead role with a number guess ballerinas including Cynthia Gregory, Eva Ednokimiva, and Yoko Morishito. We performed experimental pieces in various venues around Zürich with Mata Hari by Jürge Burth as one my favorites. I left the company in June of 1980 to head back to the United States. I spent my final two weeks with the Zürich Opera ballet performing Don Quixote at the London Coliseum. It was a fitting end to my six years in Europe.",
+      ],
+    },
+    /**
+     * Full dance gallery from legacy site. 17 photos total.
+     * - #1-2: Opening pair (Silverado/Napa, young Robert)
+     * - #3: Hero (pas de deux)
+     * - #4-6: Frankfurt/Zürich performances
+     * - #7: Agon full-width
+     * - #8, #10: Maureen Horrigan & Trudi Campbell pair
+     * - #11: Costume sketch (COLOR)
+     * - #12: April Anderson
+     * - #13-15: Three-across gallery
+     * - #16-17: Newspaper articles
+     */
     danceGallery: [
-      { src: "/images/about/dance/dance-1.webp", caption: "Robert Woods, Debra Bernard in pas de deux by Shirley Carson Ray, Silverado Ballet Troupe, Napa (1972)." },
-      { src: "/images/about/dance/dance-2.webp", caption: "Ellen Mingst, Robert Woods in ballet by Shirley Carson Ray, Silverado Ballet Troupe, Napa (1972)." },
-      { src: "/images/about/dance/dance-3.webp", caption: "Robert Woods in Divertimento #15 by George Balanchine, Frankfurt Opera Ballet (1976)." },
-      { src: "/images/about/dance/dance-4.webp", caption: "Gisella Schneider, Robert Woods in Divertimento #15 by George Balanchine, Frankfurt Opera Ballet (1975)." },
-      { src: "/images/about/dance/dance-5.webp", caption: "Curtain call after Don Quixote. Rudolph Nureyev, Cynthia Gregory, Zürich Opera Ballet (1979)." },
-      { src: "/images/about/dance/dance-6.webp", caption: "Floris Alexander, Jonas Kage, Alain Debrus, Robert Woods in Agon by George Balanchine, Zürich Opera Ballet (1978)." },
-      { src: "/images/about/dance/dance-7.webp", caption: "Maureen Horrigan, Robert Woods in neoclassical ballet by Alfonso Catá, Frankfurt Opera Ballet (1974)." },
-      { src: "/images/about/dance/dance-8.webp", caption: "Trudi Campbell, Maria Gurero, Robert Woods in Divertimento #15 by George Balanchine, Frankfurt Opera Ballet (1975)." },
-      { src: "/images/about/dance/dance-9.webp", caption: "April Anderson, Robert Woods in Imperial Ballet by Alfonso Catá, Frankfurt Opera Ballet (1974)." },
-      { src: "/images/about/dance/dance-10.webp", caption: "Original Costume Sketch for Robert Woods from Schemenstadt by Jürge Burth, Zürich Opera Ballet (1977)." },
-    ],
+      {
+        src: "/images/about/dance/legacy/01-debra-bernard-napa-1972.webp",
+        caption: "Robert Woods, Debra Bernard in pas de deux by Shirley Carson Ray, Silverado Ballet Troupe, Napa (1972).",
+        captionVariant: "serif-bottom-left",
+      },
+      {
+        src: "/images/about/dance/legacy/02-ellen-mingst-napa-1972.webp",
+        caption: "Ellen Mingst, Robert Woods in ballet by Shirley Carson Ray, Silverado Ballet Troupe, Napa (1972).",
+        captionVariant: "serif-bottom-center",
+      },
+      {
+        src: "/images/about/dance/legacy/03-pas-de-deux-frankfurt.webp",
+        caption: "",
+      },
+      {
+        src: "/images/about/dance/legacy/04-don-quixote-curtain-call-1979.webp",
+        caption: "Curtain call after Zürich Opera Ballet performs Don Quixote. From left to right: Rudy Budavary, Rudolph Nureyev, James Jones, Cynthia Gregory, and Cathy Prescott. Zürich, Switzerland (1979).",
+      },
+      {
+        src: "/images/about/dance/legacy/05-divertimento-solo-frankfurt-1976.webp",
+        caption: "Robert Woods in Divertimento #15 by George Balanchine, Frankfurt Opera Ballet (1976).",
+      },
+      {
+        src: "/images/about/dance/legacy/06-gisella-schneider-frankfurt-1975.webp",
+        caption: "Gisella Schneider, Robert Woods in Divertimento #15 by George Balanchine, Frankfurt Opera Ballet (1975).",
+      },
+      {
+        src: "/images/about/dance/legacy/07-agon-zurich-1978.webp",
+        caption: "Floris Alexander, Jonas Kage, Alain Debrus, Robert Woods (left to right, front to back) in Agon by George Balanchine, Zürich Opera Ballet (1978).",
+      },
+      {
+        src: "/images/about/dance/legacy/08-maureen-horrigan-frankfurt-1974.webp",
+        caption: "Maureen Horrigan, Robert Woods, Ilka Doubek (front), Gerrard Synja, Lucio Zarlenga (back) in neoclassical ballet by Alfonso Catá, Frankfurt Opera Ballet Kammerspiel (1974).",
+      },
+      {
+        src: "/images/about/dance/legacy/09-neoclassical-alfonso-cata-1974.webp",
+        caption: "Neoclassical ballet by Alfonso Catá, Frankfurt Opera Ballet (1974).",
+      },
+      {
+        src: "/images/about/dance/legacy/10-trudi-campbell-frankfurt-1975.webp",
+        caption: "Trudi Campbell, Maria Gurero, Don Edwards (rear), Wilhelm Burman, Robert Woods (front) in Divertimento #15 by George Balanchine, Frankfurt Opera Ballet (1975).",
+      },
+      {
+        src: "/images/about/dance/legacy/11-costume-sketch-schemenstadt-1977.webp",
+        caption: "Original Costume Sketch for Robert Woods from Schemenstadt by Jürge Burth, Zürich Opera Ballet (1977).",
+        color: true,
+      },
+      {
+        src: "/images/about/dance/legacy/12-april-anderson-imperial-1974.webp",
+        caption: "April Anderson, Robert Woods in Imperial Ballet by Alfonso Catá, Frankfurt Opera Ballet (1974).",
+      },
+      {
+        src: "/images/about/dance/legacy/13-jillana-liebeslieder-1965.webp",
+        caption: "Jillana in Liebeslieder Waltzes by George Balanchine (1965).",
+      },
+      {
+        src: "/images/about/dance/legacy/14-cyndi-lauper-ballet-1985.webp",
+        caption: "Jennifer Morgan, Cynthia Strang, Leslie Wiesner, Robert Woods, Yvette De Marco in Cyndi Lauper Ballet by James Jones (1985).",
+        color: true,
+      },
+      {
+        src: "/images/about/dance/legacy/15-four-temperaments-1983.webp",
+        caption: "Jillana, James Jones in The Four Temperaments by George Balanchine (1983).",
+      },
+      {
+        src: "/images/about/dance/legacy/16-newspaper-article-1.webp",
+        caption: "Article in Orange County Register — Public relations article written by Chris Paslas announcing South Coast Ballet's performances at the Southland Home and Garden Show in Anaheim, California (1985).",
+      },
+      {
+        src: "/images/about/dance/legacy/17-newspaper-article-2.webp",
+        caption: "",
+      },
+    ] satisfies DanceGalleryEntry[],
   },
   hipaa: {
     title: "Policies and Procedures",
