@@ -245,7 +245,7 @@ export default function ServicesSection() {
   const { services } = practiceData
   const featuredServices = services.filter((s) => s.featured)
   const otherServices = services.filter((s) => !s.featured)
-  const categories = [...new Set(services.map((s) => s.category).filter(Boolean))] as string[]
+  const categories = [...new Set(otherServices.map((s) => s.category).filter(Boolean))] as string[]
   const [activeCategory, setActiveCategory] = useState('All')
 
   const filteredServices = activeCategory === 'All' 
