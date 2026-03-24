@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X, Phone, ChevronDown } from 'lucide-react'
@@ -97,6 +97,32 @@ export default function Header() {
     setOpenDropdown((prev) => (prev === label ? null : label))
   }
 
+  const closeMobileMenu = useCallback(() => {
+    setMobileOpen(false)
+    setMobileDropdown(null)
+  }, [])
+
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [mobileOpen])
+
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && mobileOpen) {
+        closeMobileMenu()
+      }
+    }
+    document.addEventListener('keydown', handleEscape)
+    return () => document.removeEventListener('keydown', handleEscape)
+  }, [mobileOpen, closeMobileMenu])
+
   return (
     <header className="fixed w-full top-0 z-50 bg-olive-50 shadow-sm">
       {/* Top bar */}
@@ -173,75 +199,175 @@ export default function Header() {
           {/* Mobile toggle */}
           <button
             type="button"
-            className="lg:hidden flex items-center justify-center min-h-[44px] min-w-[44px] rounded-lg text-charcoal hover:text-olive-500 hover:bg-olive-100/80 active:bg-olive-100"
+            className="lg:hidden flex items-center justify-center min-h-[44px] min-w-[44px] rounded-lg text-charcoal hover:text-olive-500 hover:bg-olive-100/80 active:bg-olive-100 transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-expanded={mobileOpen}
             aria-controls="mobile-primary-nav"
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
           >
-            {mobileOpen ? <X size={28} /> : <Menu size={28} />}
+            <span className="relative w-7 h-7">
+              <Menu 
+                size={28} 
+                className={`absolute inset-0 transition-all duration-300 ${
+                  mobileOpen ? 'opacity-0 rotate-90 scale-75' : 'opacity-100 rotate-0 scale-100'
+                }`} 
+              />
+              <X 
+                size={28} 
+                className={`absolute inset-0 transition-all duration-300 ${
+                  mobileOpen ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-75'
+                }`} 
+              />
+            </span>
           </button>
         </div>
+        </div>
+      </div>
 
-        {/* Mobile Nav */}
-        {mobileOpen && (
-          <nav id="mobile-primary-nav" className="lg:hidden pb-4 border-t border-olive-100 pt-4 space-y-1">
-            {nav.map((item) => {
+      {/* Mobile Nav Overlay */}
+      <div
+        className={`lg:hidden fixed inset-0 z-40 transition-all duration-300 ${
+          mobileOpen ? 'visible' : 'invisible'
+        }`}
+        aria-hidden={!mobileOpen}
+      >
+        {/* Dark backdrop */}
+        <div
+          className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${
+            mobileOpen ? 'opacity-100' : 'opacity-0'
+          }`}
+          onClick={closeMobileMenu}
+        />
+
+        {/* Slide-in panel */}
+        <nav
+          id="mobile-primary-nav"
+          className={`absolute top-0 right-0 h-full w-[85%] max-w-sm bg-olive-50 shadow-2xl transform transition-transform duration-300 ease-out ${
+            mobileOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
+        >
+          {/* Panel header */}
+          <div className="flex items-center justify-between p-4 border-b border-olive-200 bg-olive-100/50">
+            <span className="text-lg font-semibold text-charcoal-dark">Menu</span>
+            <button
+              type="button"
+              onClick={closeMobileMenu}
+              className="flex items-center justify-center h-11 w-11 rounded-lg text-gray-500 hover:text-olive-600 hover:bg-olive-200/50 transition-colors"
+              aria-label="Close menu"
+            >
+              <X size={24} />
+            </button>
+          </div>
+
+          {/* Scrollable nav content */}
+          <div className="overflow-y-auto h-[calc(100%-80px)] p-4 space-y-1">
+            {nav.map((item, index) => {
               const hasChildren = 'children' in item && item.children && item.children.length > 0
+              const isExpanded = mobileDropdown === item.label
               return (
-                <div key={item.href}>
-                  <div className="flex items-center justify-between">
+                <div 
+                  key={item.href}
+                  className="transform transition-all duration-300"
+                  style={{ 
+                    transitionDelay: mobileOpen ? `${index * 50}ms` : '0ms',
+                    opacity: mobileOpen ? 1 : 0,
+                    transform: mobileOpen ? 'translateX(0)' : 'translateX(20px)'
+                  }}
+                >
+                  <div className="flex items-center justify-between rounded-lg hover:bg-olive-100/60 transition-colors">
                     <Link
                       href={item.href}
-                      onClick={() => { if (!hasChildren) setMobileOpen(false) }}
-                      className={`flex min-h-[44px] items-center py-2 text-xl font-medium flex-1 ${
-                        pathname === item.href ? 'text-olive-500' : 'text-gray-600'
+                      onClick={() => { if (!hasChildren) closeMobileMenu() }}
+                      className={`flex min-h-[52px] items-center py-3 px-3 text-lg font-medium flex-1 transition-colors ${
+                        pathname === item.href 
+                          ? 'text-olive-600' 
+                          : 'text-charcoal-dark hover:text-olive-600'
                       }`}
                     >
                       {item.label}
+                      {pathname === item.href && (
+                        <span className="ml-2 w-2 h-2 rounded-full bg-olive-500" />
+                      )}
                     </Link>
                     {hasChildren && (
                       <button
                         type="button"
-                        onClick={() => setMobileDropdown(mobileDropdown === item.label ? null : item.label)}
-                        className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-gray-400 hover:text-olive-500 hover:bg-olive-100/80"
-                        aria-expanded={mobileDropdown === item.label}
-                        aria-label={`${mobileDropdown === item.label ? 'Collapse' : 'Expand'} ${item.label} submenu`}
+                        onClick={() => setMobileDropdown(isExpanded ? null : item.label)}
+                        className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-gray-400 hover:text-olive-600 hover:bg-olive-200/50 transition-all mr-1"
+                        aria-expanded={isExpanded}
+                        aria-label={`${isExpanded ? 'Collapse' : 'Expand'} ${item.label} submenu`}
                       >
                         <ChevronDown
-                          size={16}
-                          className={`transition-transform ${mobileDropdown === item.label ? 'rotate-180' : ''}`}
+                          size={20}
+                          className={`transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
                         />
                       </button>
                     )}
                   </div>
-                  {hasChildren && mobileDropdown === item.label && (
-                    <div className="pl-4 pb-2 space-y-1">
-                      {item.children!.map((child) => (
+                  
+                  {/* Expandable submenu with animation */}
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ease-out ${
+                      hasChildren && isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                    }`}
+                  >
+                    <div className="pl-4 py-2 space-y-1 border-l-2 border-olive-300 ml-4">
+                      {item.children?.map((child, childIndex) => (
                         <Link
                           key={child.label}
                           href={child.href}
-                          onClick={() => setMobileOpen(false)}
-                          className="flex min-h-[44px] items-center py-2 text-base text-gray-500 hover:text-olive-500"
+                          onClick={closeMobileMenu}
+                          className="flex min-h-[44px] items-center py-2 px-3 text-base text-gray-600 hover:text-olive-600 hover:bg-olive-100/40 rounded-lg transition-all"
+                          style={{
+                            transitionDelay: isExpanded ? `${childIndex * 30}ms` : '0ms'
+                          }}
                         >
                           {child.label}
                         </Link>
                       ))}
                     </div>
-                  )}
+                  </div>
                 </div>
               )
             })}
-            <Link
-              href="/contact"
-              onClick={() => setMobileOpen(false)}
-              className="btn-primary w-full text-lg text-center mt-2"
+
+            {/* Contact button */}
+            <div 
+              className="pt-4 transform transition-all duration-300"
+              style={{ 
+                transitionDelay: mobileOpen ? `${nav.length * 50}ms` : '0ms',
+                opacity: mobileOpen ? 1 : 0,
+                transform: mobileOpen ? 'translateX(0)' : 'translateX(20px)'
+              }}
             >
-              Contact Me
-            </Link>
-          </nav>
-        )}
-        </div>
+              <Link
+                href="/contact"
+                onClick={closeMobileMenu}
+                className="btn-primary w-full text-lg text-center flex items-center justify-center gap-2 py-4"
+              >
+                <Phone size={20} />
+                Contact Me
+              </Link>
+            </div>
+
+            {/* Phone number */}
+            <div 
+              className="pt-4 text-center transform transition-all duration-300"
+              style={{ 
+                transitionDelay: mobileOpen ? `${(nav.length + 1) * 50}ms` : '0ms',
+                opacity: mobileOpen ? 1 : 0
+              }}
+            >
+              <a
+                href={doctor.phoneHref}
+                className="inline-flex items-center gap-2 text-olive-600 hover:text-olive-700 font-medium transition-colors"
+              >
+                <Phone size={18} />
+                {doctor.phone}
+              </a>
+            </div>
+          </div>
+        </nav>
       </div>
     </header>
   )
