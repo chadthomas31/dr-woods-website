@@ -18,6 +18,12 @@ export default function ContactPage() {
     )
     window.location.href = `mailto:${doctor.email}?subject=${subject}&body=${body}`
     setSubmitted(true)
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'generate_lead', {
+        event_category: 'Contact',
+        event_label: 'Consultation Request',
+      })
+    }
   }
 
   return (
@@ -103,6 +109,14 @@ export default function ContactPage() {
                     <p className="text-gray-400 text-sm">Phone</p>
                     <a
                       href={doctor.phoneHref}
+                      onClick={() => {
+                        if (typeof window.gtag === 'function') {
+                          window.gtag('event', 'phone_click', {
+                            event_category: 'Contact',
+                            event_label: doctor.phone,
+                          })
+                        }
+                      }}
                       className="touch-target-link text-charcoal-dark hover:text-olive-500 transition-colors font-medium"
                     >
                       {doctor.phone}

@@ -1,9 +1,12 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter, Merriweather } from 'next/font/google'
+import Script from 'next/script'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import AIChatWidget from './components/AIChatWidget'
+
+const GA_MEASUREMENT_ID = 'G-PJE8GPG1ZN'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -63,6 +66,18 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${merriweather.variable} scroll-smooth`}>
       <head>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
       </head>
