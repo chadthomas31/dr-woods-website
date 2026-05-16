@@ -123,6 +123,28 @@ export default function Footer() {
         <div className="border-t border-gray-700 pt-8 mt-12 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-gray-500 text-xs text-center sm:text-left">
             &copy; {new Date().getFullYear()} {doctor.name}. All rights reserved.
+            <span className="block sm:inline sm:ml-2 mt-1 sm:mt-0">
+              Site by{" "}
+              <a
+                href="https://stackconsultingai.com"
+                target="_blank"
+                rel="noopener"
+                className="hover:text-olive-400 transition-colors underline-offset-2 hover:underline"
+              >
+                Stack Consulting AI
+              </a>
+              {" · "}
+              AI intake by{" "}
+              <a
+                href="https://strategicsync.com"
+                target="_blank"
+                rel="noopener"
+                className="hover:text-olive-400 transition-colors underline-offset-2 hover:underline"
+              >
+                Strategic Sync
+              </a>
+              .
+            </span>
           </p>
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-2">
             <Link
